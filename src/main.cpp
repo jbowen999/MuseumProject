@@ -1,8 +1,6 @@
 #include <format>
 #include <iostream>
-#include "../include/Date.h"
-#include "../include/Name.h"
-#include "../include/Dimensions.h"
+#include "../include/Artwork.h"
 using namespace std;
 
 
@@ -12,92 +10,6 @@ using namespace std;
 // public:
 //     Time(const int h) { hours(h); }
 // };
-
-class Artwork {
-    Name artist;
-    string title;
-    Date created;
-    Date acquired;
-    Name donatedBy;
-
-public:
-    Artwork() : artist("", ""), title(""), created(0, 0, 0), acquired(0, 0, 0), donatedBy("", "") {
-    }
-
-    virtual ~Artwork() = 0;
-
-    string virtual toString() const = 0;
-
-    double virtual value() const = 0;
-
-    void setArtist(const string &f, const string &l) {
-        artist = Name(f, l);
-    }
-
-    void setTitle(const string &t) {
-        title = t;
-    }
-
-    void setCreatedDate(const int m, const int d, const int y) {
-        created = Date(m, d, y);
-    }
-
-    void setAcquiredDate(const int m, const int d, const int y) {
-        acquired = Date(m, d, y);
-    }
-
-    void setDonatedBy(const string &f, const string &l) {
-        donatedBy = Name(f, l);
-    }
-
-    Name getArtist() const {
-        return artist;
-    }
-
-    string getTitle() const {
-        return title;
-    }
-
-    Date getCreatedDate() const {
-        return created;
-    }
-
-    Date getAcquiredDate() const {
-        return acquired;
-    }
-
-    Name getDonatedBy() const {
-        return donatedBy;
-    }
-
-    bool operator==(const Artwork& other) const {
-        return value() == other.value();
-    }
-
-    bool operator!=(const Artwork& other) const {
-        return !(*this == other);
-    }
-
-    bool operator<(const Artwork& other) const {
-        return value() < other.value();
-    }
-
-    bool operator<=(const Artwork& other) const {
-        return value() <= other.value();
-    }
-
-    bool operator>(const Artwork& other) const {
-        return value() > other.value();
-    }
-
-    bool operator>=(const Artwork& other) const {
-        return value() >= other.value();
-    }
-
-
-};
-
-Artwork::~Artwork() = default;
 
 
 class Painting : public Artwork {

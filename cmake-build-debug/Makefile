@@ -128,6 +128,30 @@ Museum/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Museum.dir\build.make CMakeFiles/Museum.dir/build
 .PHONY : Museum/fast
 
+src/Artwork.obj: src/Artwork.cpp.obj
+.PHONY : src/Artwork.obj
+
+# target to build an object file
+src/Artwork.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Museum.dir\build.make CMakeFiles/Museum.dir/src/Artwork.cpp.obj
+.PHONY : src/Artwork.cpp.obj
+
+src/Artwork.i: src/Artwork.cpp.i
+.PHONY : src/Artwork.i
+
+# target to preprocess a source file
+src/Artwork.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Museum.dir\build.make CMakeFiles/Museum.dir/src/Artwork.cpp.i
+.PHONY : src/Artwork.cpp.i
+
+src/Artwork.s: src/Artwork.cpp.s
+.PHONY : src/Artwork.s
+
+# target to generate assembly for a file
+src/Artwork.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Museum.dir\build.make CMakeFiles/Museum.dir/src/Artwork.cpp.s
+.PHONY : src/Artwork.cpp.s
+
 src/Date.obj: src/Date.cpp.obj
 .PHONY : src/Date.obj
 
@@ -233,6 +257,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Museum
+	@echo ... src/Artwork.obj
+	@echo ... src/Artwork.i
+	@echo ... src/Artwork.s
 	@echo ... src/Date.obj
 	@echo ... src/Date.i
 	@echo ... src/Date.s
