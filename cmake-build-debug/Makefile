@@ -152,6 +152,30 @@ src/Date.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Museum.dir\build.make CMakeFiles/Museum.dir/src/Date.cpp.s
 .PHONY : src/Date.cpp.s
 
+src/Dimensions.obj: src/Dimensions.cpp.obj
+.PHONY : src/Dimensions.obj
+
+# target to build an object file
+src/Dimensions.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Museum.dir\build.make CMakeFiles/Museum.dir/src/Dimensions.cpp.obj
+.PHONY : src/Dimensions.cpp.obj
+
+src/Dimensions.i: src/Dimensions.cpp.i
+.PHONY : src/Dimensions.i
+
+# target to preprocess a source file
+src/Dimensions.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Museum.dir\build.make CMakeFiles/Museum.dir/src/Dimensions.cpp.i
+.PHONY : src/Dimensions.cpp.i
+
+src/Dimensions.s: src/Dimensions.cpp.s
+.PHONY : src/Dimensions.s
+
+# target to generate assembly for a file
+src/Dimensions.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Museum.dir\build.make CMakeFiles/Museum.dir/src/Dimensions.cpp.s
+.PHONY : src/Dimensions.cpp.s
+
 src/Name.obj: src/Name.cpp.obj
 .PHONY : src/Name.obj
 
@@ -212,6 +236,9 @@ help:
 	@echo ... src/Date.obj
 	@echo ... src/Date.i
 	@echo ... src/Date.s
+	@echo ... src/Dimensions.obj
+	@echo ... src/Dimensions.i
+	@echo ... src/Dimensions.s
 	@echo ... src/Name.obj
 	@echo ... src/Name.i
 	@echo ... src/Name.s

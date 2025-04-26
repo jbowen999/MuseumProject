@@ -1,37 +1,10 @@
-#include <iostream>
 #include <format>
-#include "../include/Name.h"
+#include <iostream>
 #include "../include/Date.h"
+#include "../include/Name.h"
+#include "../include/Dimensions.h"
 using namespace std;
 
-class Dimensions {
-    double width;
-    double height;
-
-public:
-    Dimensions(const double w, const double h) : width(w), height(h) {
-    }
-
-    string toString() const {
-        return std::format("{:.2f} x {:.2f} in", width, height);
-    }
-
-    void setWidth(const double w) {
-        width = w;
-    }
-
-    void setHeight(const double h) {
-        height = h;
-    }
-
-    double getWidth() const {
-        return width;
-    }
-
-    double getHeight() const {
-        return height;
-    }
-};
 
 // class Time {
 //     int hours;

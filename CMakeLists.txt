@@ -7,4 +7,6 @@ add_executable(Museum src/main.cpp
         src/Name.cpp
         include/Name.h
         src/Date.cpp
-        include/Date.h)
+        include/Date.h
+        src/Dimensions.cpp
+        include/Dimensions.h)

@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Museum.dir/src/Date.cpp.obj"
   "CMakeFiles/Museum.dir/src/Date.cpp.obj.d"
+  "CMakeFiles/Museum.dir/src/Dimensions.cpp.obj"
+  "CMakeFiles/Museum.dir/src/Dimensions.cpp.obj.d"
   "CMakeFiles/Museum.dir/src/Name.cpp.obj"
   "CMakeFiles/Museum.dir/src/Name.cpp.obj.d"
   "CMakeFiles/Museum.dir/src/main.cpp.obj"

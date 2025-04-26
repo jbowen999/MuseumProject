@@ -1,0 +1,28 @@
+//
+// Created by Julian on 4/25/2025.
+//
+
+#include "../include/Dimensions.h"
+
+Dimensions::Dimensions(const double w, const double h)
+    :width(w), height(h) {}
+
+std::string Dimensions::toString() const {
+    return std::format("{:.2f} x {:.2f} in", width, height);
+}
+
+void Dimensions::setWidth(const double w) {
+    width = w;
+}
+
+void Dimensions::setHeight(const double h) {
+    height = h;
+}
+
+double Dimensions::getWidth() const {
+    return width;
+}
+
+double Dimensions::getHeight() const {
+    return height;
+}
