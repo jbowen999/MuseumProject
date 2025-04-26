@@ -68,33 +68,65 @@ include CMakeFiles/Museum.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Museum.dir/flags.make
 
-CMakeFiles/Museum.dir/main.cpp.obj: CMakeFiles/Museum.dir/flags.make
-CMakeFiles/Museum.dir/main.cpp.obj: C:/Users/Julian/CLionProjects/Museum/main.cpp
-CMakeFiles/Museum.dir/main.cpp.obj: CMakeFiles/Museum.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Julian\CLionProjects\Museum\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Museum.dir/main.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Museum.dir/main.cpp.obj -MF CMakeFiles\Museum.dir\main.cpp.obj.d -o CMakeFiles\Museum.dir\main.cpp.obj -c C:\Users\Julian\CLionProjects\Museum\main.cpp
+CMakeFiles/Museum.dir/src/main.cpp.obj: CMakeFiles/Museum.dir/flags.make
+CMakeFiles/Museum.dir/src/main.cpp.obj: C:/Users/Julian/CLionProjects/Museum/src/main.cpp
+CMakeFiles/Museum.dir/src/main.cpp.obj: CMakeFiles/Museum.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Julian\CLionProjects\Museum\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Museum.dir/src/main.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Museum.dir/src/main.cpp.obj -MF CMakeFiles\Museum.dir\src\main.cpp.obj.d -o CMakeFiles\Museum.dir\src\main.cpp.obj -c C:\Users\Julian\CLionProjects\Museum\src\main.cpp
 
-CMakeFiles/Museum.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Museum.dir/main.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Julian\CLionProjects\Museum\main.cpp > CMakeFiles\Museum.dir\main.cpp.i
+CMakeFiles/Museum.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Museum.dir/src/main.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Julian\CLionProjects\Museum\src\main.cpp > CMakeFiles\Museum.dir\src\main.cpp.i
 
-CMakeFiles/Museum.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Museum.dir/main.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Julian\CLionProjects\Museum\main.cpp -o CMakeFiles\Museum.dir\main.cpp.s
+CMakeFiles/Museum.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Museum.dir/src/main.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Julian\CLionProjects\Museum\src\main.cpp -o CMakeFiles\Museum.dir\src\main.cpp.s
+
+CMakeFiles/Museum.dir/src/Name.cpp.obj: CMakeFiles/Museum.dir/flags.make
+CMakeFiles/Museum.dir/src/Name.cpp.obj: C:/Users/Julian/CLionProjects/Museum/src/Name.cpp
+CMakeFiles/Museum.dir/src/Name.cpp.obj: CMakeFiles/Museum.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Julian\CLionProjects\Museum\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Museum.dir/src/Name.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Museum.dir/src/Name.cpp.obj -MF CMakeFiles\Museum.dir\src\Name.cpp.obj.d -o CMakeFiles\Museum.dir\src\Name.cpp.obj -c C:\Users\Julian\CLionProjects\Museum\src\Name.cpp
+
+CMakeFiles/Museum.dir/src/Name.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Museum.dir/src/Name.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Julian\CLionProjects\Museum\src\Name.cpp > CMakeFiles\Museum.dir\src\Name.cpp.i
+
+CMakeFiles/Museum.dir/src/Name.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Museum.dir/src/Name.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Julian\CLionProjects\Museum\src\Name.cpp -o CMakeFiles\Museum.dir\src\Name.cpp.s
+
+CMakeFiles/Museum.dir/src/Date.cpp.obj: CMakeFiles/Museum.dir/flags.make
+CMakeFiles/Museum.dir/src/Date.cpp.obj: C:/Users/Julian/CLionProjects/Museum/src/Date.cpp
+CMakeFiles/Museum.dir/src/Date.cpp.obj: CMakeFiles/Museum.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Julian\CLionProjects\Museum\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Museum.dir/src/Date.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Museum.dir/src/Date.cpp.obj -MF CMakeFiles\Museum.dir\src\Date.cpp.obj.d -o CMakeFiles\Museum.dir\src\Date.cpp.obj -c C:\Users\Julian\CLionProjects\Museum\src\Date.cpp
+
+CMakeFiles/Museum.dir/src/Date.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Museum.dir/src/Date.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Julian\CLionProjects\Museum\src\Date.cpp > CMakeFiles\Museum.dir\src\Date.cpp.i
+
+CMakeFiles/Museum.dir/src/Date.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Museum.dir/src/Date.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Julian\CLionProjects\Museum\src\Date.cpp -o CMakeFiles\Museum.dir\src\Date.cpp.s
 
 # Object files for target Museum
 Museum_OBJECTS = \
-"CMakeFiles/Museum.dir/main.cpp.obj"
+"CMakeFiles/Museum.dir/src/main.cpp.obj" \
+"CMakeFiles/Museum.dir/src/Name.cpp.obj" \
+"CMakeFiles/Museum.dir/src/Date.cpp.obj"
 
 # External object files for target Museum
 Museum_EXTERNAL_OBJECTS =
 
-Museum.exe: CMakeFiles/Museum.dir/main.cpp.obj
+Museum.exe: CMakeFiles/Museum.dir/src/main.cpp.obj
+Museum.exe: CMakeFiles/Museum.dir/src/Name.cpp.obj
+Museum.exe: CMakeFiles/Museum.dir/src/Date.cpp.obj
 Museum.exe: CMakeFiles/Museum.dir/build.make
 Museum.exe: CMakeFiles/Museum.dir/linkLibs.rsp
 Museum.exe: CMakeFiles/Museum.dir/objects1.rsp
 Museum.exe: CMakeFiles/Museum.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\Julian\CLionProjects\Museum\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Museum.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\Julian\CLionProjects\Museum\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Museum.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Museum.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

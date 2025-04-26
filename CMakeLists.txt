@@ -3,4 +3,8 @@ project(Museum)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Museum main.cpp)
+add_executable(Museum src/main.cpp
+        src/Name.cpp
+        include/Name.h
+        src/Date.cpp
+        include/Date.h)

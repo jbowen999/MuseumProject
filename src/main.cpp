@@ -1,37 +1,8 @@
 #include <iostream>
 #include <format>
+#include "../include/Name.h"
+#include "../include/Date.h"
 using namespace std;
-
-class Name {
-    string firstName;
-    string lastName;
-
-public:
-    Name(string f, string l) : firstName(std::move(f)), lastName(std::move(l)) {
-    }
-
-    [[nodiscard]] string toString() const {
-        return firstName + " " + lastName;
-    }
-};
-
-class Date {
-    int month;
-    int day;
-    int year;
-
-public:
-    Date(const int m, const int d, const int y) : month(m), day(d), year(y) {
-    }
-
-    [[nodiscard]] string toString() const {
-        return to_string(month) + "/" + to_string(day) + "/" + to_string(year);
-    }
-
-    int getYear() const {
-        return year;
-    }
-};
 
 class Dimensions {
     double width;

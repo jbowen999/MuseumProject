@@ -128,29 +128,77 @@ Museum/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Museum.dir\build.make CMakeFiles/Museum.dir/build
 .PHONY : Museum/fast
 
-main.obj: main.cpp.obj
-.PHONY : main.obj
+src/Date.obj: src/Date.cpp.obj
+.PHONY : src/Date.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Museum.dir\build.make CMakeFiles/Museum.dir/main.cpp.obj
-.PHONY : main.cpp.obj
+src/Date.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Museum.dir\build.make CMakeFiles/Museum.dir/src/Date.cpp.obj
+.PHONY : src/Date.cpp.obj
 
-main.i: main.cpp.i
-.PHONY : main.i
+src/Date.i: src/Date.cpp.i
+.PHONY : src/Date.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Museum.dir\build.make CMakeFiles/Museum.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/Date.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Museum.dir\build.make CMakeFiles/Museum.dir/src/Date.cpp.i
+.PHONY : src/Date.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+src/Date.s: src/Date.cpp.s
+.PHONY : src/Date.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Museum.dir\build.make CMakeFiles/Museum.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/Date.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Museum.dir\build.make CMakeFiles/Museum.dir/src/Date.cpp.s
+.PHONY : src/Date.cpp.s
+
+src/Name.obj: src/Name.cpp.obj
+.PHONY : src/Name.obj
+
+# target to build an object file
+src/Name.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Museum.dir\build.make CMakeFiles/Museum.dir/src/Name.cpp.obj
+.PHONY : src/Name.cpp.obj
+
+src/Name.i: src/Name.cpp.i
+.PHONY : src/Name.i
+
+# target to preprocess a source file
+src/Name.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Museum.dir\build.make CMakeFiles/Museum.dir/src/Name.cpp.i
+.PHONY : src/Name.cpp.i
+
+src/Name.s: src/Name.cpp.s
+.PHONY : src/Name.s
+
+# target to generate assembly for a file
+src/Name.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Museum.dir\build.make CMakeFiles/Museum.dir/src/Name.cpp.s
+.PHONY : src/Name.cpp.s
+
+src/main.obj: src/main.cpp.obj
+.PHONY : src/main.obj
+
+# target to build an object file
+src/main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Museum.dir\build.make CMakeFiles/Museum.dir/src/main.cpp.obj
+.PHONY : src/main.cpp.obj
+
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Museum.dir\build.make CMakeFiles/Museum.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Museum.dir\build.make CMakeFiles/Museum.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -161,9 +209,15 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Museum
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... src/Date.obj
+	@echo ... src/Date.i
+	@echo ... src/Date.s
+	@echo ... src/Name.obj
+	@echo ... src/Name.i
+	@echo ... src/Name.s
+	@echo ... src/main.obj
+	@echo ... src/main.i
+	@echo ... src/main.s
 .PHONY : help
 
 
