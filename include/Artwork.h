@@ -15,6 +15,7 @@ class Artwork {
     Date created;
     Date acquired;
     Name donatedBy;
+    std::string assciArtFilename;
 
 public:
     Artwork();

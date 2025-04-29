@@ -4,8 +4,10 @@
 
 #include "../include/Artwork.h"
 
-Artwork::Artwork() : artist("", ""), title(""), created(0, 0, 0), acquired(0, 0, 0), donatedBy("", "") {
-}
+Artwork::Artwork() : artist("", ""),
+                     title(""), created(0, 0, 0),
+                     acquired(0, 0, 0), donatedBy("", ""),
+                     assciArtFilename("") {}
 
 Artwork::~Artwork() = default;
 
@@ -49,26 +51,26 @@ Name Artwork::getDonatedBy() const {
     return donatedBy;
 }
 
-bool Artwork::operator==(const Artwork& other) const {
+bool Artwork::operator==(const Artwork &other) const {
     return value() == other.value();
 }
 
-bool Artwork::operator!=(const Artwork& other) const {
+bool Artwork::operator!=(const Artwork &other) const {
     return !(*this == other);
 }
 
-bool Artwork::operator<(const Artwork& other) const {
+bool Artwork::operator<(const Artwork &other) const {
     return value() < other.value();
 }
 
-bool Artwork::operator<=(const Artwork& other) const {
+bool Artwork::operator<=(const Artwork &other) const {
     return value() <= other.value();
 }
 
-bool Artwork::operator>(const Artwork& other) const {
+bool Artwork::operator>(const Artwork &other) const {
     return value() > other.value();
 }
 
-bool Artwork::operator>=(const Artwork& other) const {
+bool Artwork::operator>=(const Artwork &other) const {
     return value() >= other.value();
 }
