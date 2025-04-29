@@ -80,12 +80,12 @@ clean: CMakeFiles/Museum.dir/clean
 CMakeFiles/Museum.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Museum.dir\build.make CMakeFiles/Museum.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Museum.dir\build.make CMakeFiles/Museum.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Julian\CLionProjects\Museum\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6 "Built target Museum"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Julian\CLionProjects\Museum\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target Museum"
 .PHONY : CMakeFiles/Museum.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Museum.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Julian\CLionProjects\Museum\cmake-build-debug\CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Julian\CLionProjects\Museum\cmake-build-debug\CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/Museum.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Julian\CLionProjects\Museum\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/Museum.dir/rule

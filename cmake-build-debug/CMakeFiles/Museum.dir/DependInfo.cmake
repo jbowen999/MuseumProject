@@ -12,6 +12,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/Julian/CLionProjects/Museum/src/Date.cpp" "CMakeFiles/Museum.dir/src/Date.cpp.obj" "gcc" "CMakeFiles/Museum.dir/src/Date.cpp.obj.d"
   "C:/Users/Julian/CLionProjects/Museum/src/Dimensions.cpp" "CMakeFiles/Museum.dir/src/Dimensions.cpp.obj" "gcc" "CMakeFiles/Museum.dir/src/Dimensions.cpp.obj.d"
   "C:/Users/Julian/CLionProjects/Museum/src/Name.cpp" "CMakeFiles/Museum.dir/src/Name.cpp.obj" "gcc" "CMakeFiles/Museum.dir/src/Name.cpp.obj.d"
+  "C:/Users/Julian/CLionProjects/Museum/src/Painting.cpp" "CMakeFiles/Museum.dir/src/Painting.cpp.obj" "gcc" "CMakeFiles/Museum.dir/src/Painting.cpp.obj.d"
   "C:/Users/Julian/CLionProjects/Museum/src/main.cpp" "CMakeFiles/Museum.dir/src/main.cpp.obj" "gcc" "CMakeFiles/Museum.dir/src/main.cpp.obj.d"
   )
 
