@@ -2,6 +2,7 @@
 #include <fstream>
 #include <memory>
 #include "../include/Painting.h"
+#include "../include/Sculpture.h"
 
 using namespace std;
 
@@ -36,7 +37,9 @@ vector<unique_ptr<Artwork> > loadData(const string &filename) {
 
         if (fields[0] == "Painting") {
             artworks.push_back(make_unique<Painting>(createPainting(fields)));
-        } else {
+        } else if (fields[0] == "Sculpture") {
+            artworks.push_back(make_unique<Sculpture>(createSculpture(fields)));
+        }else {
             cerr << "Unknown artwork type: " << fields[0] << endl;
         }
     }

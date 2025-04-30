@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Museum.dir/src/Name.cpp.obj.d"
   "CMakeFiles/Museum.dir/src/Painting.cpp.obj"
   "CMakeFiles/Museum.dir/src/Painting.cpp.obj.d"
+  "CMakeFiles/Museum.dir/src/Sculpture.cpp.obj"
+  "CMakeFiles/Museum.dir/src/Sculpture.cpp.obj.d"
   "CMakeFiles/Museum.dir/src/main.cpp.obj"
   "CMakeFiles/Museum.dir/src/main.cpp.obj.d"
   "Museum.exe"

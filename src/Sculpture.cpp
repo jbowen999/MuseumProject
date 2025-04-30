@@ -2,50 +2,53 @@
 // Created by Julian on 4/29/2025.
 //
 
-#include "../include/Painting.h"
+#include "../include/Sculpture.h"
 
-int Painting::numberOfPaintings = 0;  // Initialize the static variable
 
-Painting::Painting(const string &artistFirst, const string &artistLast,
+int Sculpture::numberOfSculptures = 0; // Initialize the static variable
+
+Sculpture::Sculpture(const string &artistFirst, const string &artistLast,
                      const string &title, const int createdMonth,
                      const int createdDay, const int createdYear,
                      const int acquiredMonth, const int acquiredDay,
                      const int acquiredYear, const string &donatedFirst,
                      const string &donatedLast, const double w, const double h,
-                     const Medium medium, const std::string &asciiArtFilename)
-{
+                     const double weight, const Medium medium,
+                     const std::string &asciiArtFilename) {
     setArtist(artistFirst, artistLast);
     setTitle(title);
     setCreatedDate(createdMonth, createdDay, createdYear);
     setAcquiredDate(acquiredMonth, acquiredDay, acquiredYear);
     setDonatedBy(donatedFirst, donatedLast);
     setDimensions(h, w);
+    this->weight = weight;
     this->medium = medium;
-    numberOfPaintings++;
+    numberOfSculptures++;
 }
 
-string Painting::getMediumAsString() const {
+string Sculpture::getMediumAsString() const {
     switch (medium) {
-        case Medium::Oil: return "Oil";
-        case Medium::Acrylic: return "Acrylic";
-        case Medium::Watercolor: return "Watercolor";
+        case Medium::Ceramic: return "Ceramic";
+        case Medium::Stone: return "Stone";
+        case Medium::Metal: return "Metal";
         case Medium::Mixed_Media: return "Mixed Media";
         default: return "Unknown";
     }
 }
 
-string Painting::toString() const {
-    return "Painting: \"" + getTitle() + "\"\n"
+string Sculpture::toString() const {
+    return "Sculpture: \"" + getTitle() + "\"\n"
            "Artist: " + getArtist().toString() + "\n"
            "Created: " + getCreatedDate().toString() + "\n"
            "Acquired: " + getAcquiredDate().toString() + "\n"
            "Donated by: " + getDonatedBy().toString() + "\n"
            "Dimensions: " + getDimensions().toString() + "\n"
+           "Weight: " + format("{:.2f} kg", weight) + "\n"
            "Medium: " + getMediumAsString() + "\n"
            "Value: " + format("${:.2f}", value());
 }
 
-double Painting::value() const {
+double Sculpture::value() const {
     // Calculate age
     constexpr int currentYear = 2025; // or get it from system date
     const int age = currentYear - getCreatedDate().getYear();
@@ -58,25 +61,25 @@ double Painting::value() const {
     return age * areaInSquareFeet;
 }
 
-void Painting::setDimensions(const double h, const double w) {
+void Sculpture::setDimensions(const double h, const double w) {
     dimensions.setHeight(h);
     dimensions.setWidth(w);
 }
 
-Dimensions Painting::getDimensions() const {
+Dimensions Sculpture::getDimensions() const {
     return dimensions;
 }
 
 
-Painting::Medium parsePaintingMedium(const std::string &str) {
-    if (str == "Oil") return Painting::Medium::Oil;
-    if (str == "Acrylic") return Painting::Medium::Acrylic;
-    if (str == "Watercolor") return Painting::Medium::Watercolor;
-    if (str == "Mixed_Media") return Painting::Medium::Mixed_Media;
+Sculpture::Medium parseSculptureMedium(const std::string &str) {
+    if (str == "Ceramic") return Sculpture::Medium::Ceramic;
+    if (str == "Stone") return Sculpture::Medium::Stone;
+    if (str == "Metal") return Sculpture::Medium::Metal;
+    if (str == "Mixed_Media") return Sculpture::Medium::Mixed_Media;
     throw std::invalid_argument("Unknown medium: " + str);
 }
 
-Painting createPainting(const vector<string> &fields) {
+Sculpture createSculpture(const vector<string> &fields) {
     const string &artistFirstName = fields[1];
     const string &artistLastName = fields[2];
     const string &title = fields[3];
@@ -90,16 +93,17 @@ Painting createPainting(const vector<string> &fields) {
     const string &donatedLast = fields[11];
     const double w = stod(fields[12]);
     const double h = stod(fields[13]);
-    const Painting::Medium medium = parsePaintingMedium(fields[14]);
-    const string &asciiArtFilename = fields[15];
+    const double weight = stod(fields[14]);
+    const Sculpture::Medium medium = parseSculptureMedium(fields[15]);
+    const string &asciiArtFilename = fields[16];
 
-    return Painting(
+    return Sculpture(
         artistFirstName, artistLastName,
         title,
         createdMonth, createdDay, createdYear,
         acquiredMonth, acquiredDay, acquiredYear,
         donatedFirst, donatedLast,
-        w, h,
+        w, h, weight,
         medium,
         asciiArtFilename
     );

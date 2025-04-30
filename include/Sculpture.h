@@ -2,33 +2,34 @@
 // Created by Julian on 4/29/2025.
 //
 
-#ifndef PAINTING_H
-#define PAINTING_H
+#ifndef SCULPTURE_H
+#define SCULPTURE_H
 #include "Artwork.h"
-
 
 using namespace std;
 
-class Painting final : public Artwork {
+class Sculpture final : public Artwork {
 public:
-    enum class Medium { Oil, Acrylic, Watercolor, Mixed_Media };
+    enum class Medium { Ceramic, Stone, Metal, Mixed_Media };
 
 private:
-    static int numberOfPaintings;
+    static int numberOfSculptures;
     Dimensions dimensions = Dimensions(0, 0);
+    double weight = 0;
     string asciiArtFilename;
 
 public:
     Medium medium;
 
-    Painting(const string &artistFirst,
+    Sculpture(const string &artistFirst,
              const string &artistLast,
              const string &title, int createdMonth,
              int createdDay, int createdYear,
              int acquiredMonth, int acquiredDay,
              int acquiredYear, const string &donatedFirst,
              const string &donatedLast, double w,
-             double h, Medium medium, const string &asciiArtFilename);
+             double h, double weight, Medium medium,
+             const string &asciiArtFilename);
 
     string getMediumAsString() const;
     string toString() const override;
@@ -36,13 +37,16 @@ public:
 
     void setDimensions(double h, double w);
     Dimensions getDimensions() const;
+    void setWeight(double w);
+    double getWeight() const;
 
-    static int getNumberOfPaintings() { return numberOfPaintings; }
+    static int getNumberOfSculptures() { return numberOfSculptures; }
 
 };
 
-Painting::Medium parsePaintingMedium(const string &str);
-Painting createPainting(const vector<string> &fields);
+Sculpture::Medium parseSculptureMedium(const string &str);
+Sculpture createSculpture(const vector<string> &fields);
 
 
-#endif //PAINTING_H
+
+#endif //SCULPTURE_H

@@ -248,6 +248,30 @@ src/Painting.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Museum.dir\build.make CMakeFiles/Museum.dir/src/Painting.cpp.s
 .PHONY : src/Painting.cpp.s
 
+src/Sculpture.obj: src/Sculpture.cpp.obj
+.PHONY : src/Sculpture.obj
+
+# target to build an object file
+src/Sculpture.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Museum.dir\build.make CMakeFiles/Museum.dir/src/Sculpture.cpp.obj
+.PHONY : src/Sculpture.cpp.obj
+
+src/Sculpture.i: src/Sculpture.cpp.i
+.PHONY : src/Sculpture.i
+
+# target to preprocess a source file
+src/Sculpture.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Museum.dir\build.make CMakeFiles/Museum.dir/src/Sculpture.cpp.i
+.PHONY : src/Sculpture.cpp.i
+
+src/Sculpture.s: src/Sculpture.cpp.s
+.PHONY : src/Sculpture.s
+
+# target to generate assembly for a file
+src/Sculpture.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Museum.dir\build.make CMakeFiles/Museum.dir/src/Sculpture.cpp.s
+.PHONY : src/Sculpture.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -296,6 +320,9 @@ help:
 	@echo ... src/Painting.obj
 	@echo ... src/Painting.i
 	@echo ... src/Painting.s
+	@echo ... src/Sculpture.obj
+	@echo ... src/Sculpture.i
+	@echo ... src/Sculpture.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

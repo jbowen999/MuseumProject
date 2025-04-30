@@ -4,6 +4,7 @@
 
 #ifndef ARTWORK_H
 #define ARTWORK_H
+#include <vector>
 #include "../include/Date.h"
 #include "../include/Name.h"
 #include "../include/Dimensions.h"
