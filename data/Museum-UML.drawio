@@ -1,0 +1,111 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0" version="26.2.14">
+  <diagram name="Page-1" id="pGCT-GRcmkwaEP3EBDrm">
+    <mxGraphModel dx="1103" dy="830" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="b5EGZw9agn4j5jKMZ0zt-2" value="Artwork" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="100" width="204" height="517" as="geometry">
+            <mxRectangle x="100" y="100" width="75" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b5EGZw9agn4j5jKMZ0zt-6" value="&lt;div&gt;-artist: Name&lt;/div&gt;&lt;div&gt;-title: string&lt;/div&gt;&lt;div&gt;-created: Date&lt;/div&gt;&lt;div&gt;-acquired: Date&lt;/div&gt;&lt;div&gt;-donatedBy: Name&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="b5EGZw9agn4j5jKMZ0zt-2">
+          <mxGeometry y="22" width="202" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="b5EGZw9agn4j5jKMZ0zt-7" value="&lt;div&gt;+Artwork()&lt;br&gt;&lt;/div&gt;&lt;div&gt;+virtual ~Artwork()&lt;/div&gt;&lt;div&gt;+string virtual toString()&lt;/div&gt;&lt;div&gt;+double virtual value()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+void setArtist()&lt;/div&gt;&lt;div&gt;+void setTitle()&lt;/div&gt;&lt;div&gt;+void setCreatedDate()&lt;/div&gt;&lt;div&gt;+void setAcquiredDate()&lt;/div&gt;&lt;div&gt;+void setDonatedBy()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+Name getDonatedBy()&lt;/div&gt;&lt;div&gt;+string getTitile()&lt;/div&gt;&lt;div&gt;+Date getCreatedDate()&lt;br&gt;&lt;/div&gt;&lt;div&gt;+Date getAcquiredDate()&lt;/div&gt;&lt;div&gt;+Name getDonatedBy()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+bool operator ==&lt;/div&gt;&lt;div&gt;+bool operator !=&lt;/div&gt;&lt;div&gt;+bool operator &amp;lt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+bool operator &amp;lt;=&lt;/div&gt;&lt;div&gt;+bool operator &amp;gt;&lt;/div&gt;&lt;div&gt;+bool operator &amp;gt;=&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="b5EGZw9agn4j5jKMZ0zt-2">
+          <mxGeometry x="-1" y="118" width="204" height="395" as="geometry" />
+        </mxCell>
+        <mxCell id="b5EGZw9agn4j5jKMZ0zt-8" value="Painting final : public Artwork" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="794" width="205" height="497" as="geometry" />
+        </mxCell>
+        <mxCell id="b5EGZw9agn4j5jKMZ0zt-14" value="&lt;div&gt;Helper Functions (non members):&lt;/div&gt;&lt;div&gt;Painting::Medium parsePaintingMedium()&lt;/div&gt;&lt;div&gt;Painting createPainting()&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="b5EGZw9agn4j5jKMZ0zt-8">
+          <mxGeometry x="-1" y="344" width="206" height="153" as="geometry" />
+        </mxCell>
+        <mxCell id="b5EGZw9agn4j5jKMZ0zt-9" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="b5EGZw9agn4j5jKMZ0zt-8" target="b5EGZw9agn4j5jKMZ0zt-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b5EGZw9agn4j5jKMZ0zt-10" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="b5EGZw9agn4j5jKMZ0zt-7" target="b5EGZw9agn4j5jKMZ0zt-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b5EGZw9agn4j5jKMZ0zt-12" value="&lt;div&gt;+enum class Medium&lt;/div&gt;&lt;div&gt;-Dimensions dimensions&lt;/div&gt;&lt;div&gt;+int numberOfPaintings&lt;/div&gt;&lt;div&gt;+Medium medium&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="815" width="203" height="149" as="geometry" />
+        </mxCell>
+        <mxCell id="b5EGZw9agn4j5jKMZ0zt-13" value="&lt;div&gt;+Painting()&lt;/div&gt;&lt;div&gt;+string getMediumAsString()&lt;/div&gt;&lt;div&gt;+string toString() override&lt;br&gt;&lt;/div&gt;&lt;div&gt;+double value() override&lt;/div&gt;&lt;div&gt;+void setDimensions()&lt;/div&gt;&lt;div&gt;+Dimensions getDimensions()&lt;/div&gt;&lt;div&gt;+int getNumberOfPaintings()&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="964" width="203" height="174" as="geometry" />
+        </mxCell>
+        <mxCell id="b5EGZw9agn4j5jKMZ0zt-16" value="WrittenWord final : public Artwork" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="794" width="200" height="501" as="geometry" />
+        </mxCell>
+        <mxCell id="b5EGZw9agn4j5jKMZ0zt-17" value="&lt;div&gt;+enum class Medium&lt;/div&gt;&lt;div&gt;-Dimensions dimensions&lt;/div&gt;&lt;div&gt;+int numberOfWrittenWordItems&lt;/div&gt;+Medium medium" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="b5EGZw9agn4j5jKMZ0zt-16">
+          <mxGeometry y="24" width="200" height="149" as="geometry" />
+        </mxCell>
+        <mxCell id="b5EGZw9agn4j5jKMZ0zt-18" value="&lt;div&gt;+WrittenWord()&lt;/div&gt;&lt;div&gt;+string getMediumAsString()&lt;/div&gt;&lt;div&gt;+string toString() override&lt;br&gt;&lt;/div&gt;&lt;div&gt;+double value() override&lt;/div&gt;+int getNumberOfWrittenWordItems()" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="b5EGZw9agn4j5jKMZ0zt-16">
+          <mxGeometry y="173" width="200" height="171" as="geometry" />
+        </mxCell>
+        <mxCell id="b5EGZw9agn4j5jKMZ0zt-19" value="&lt;div&gt;Helper Functions (non members):&lt;/div&gt;&lt;div&gt;WrittenWord::Medium parseWrittenWordMedium()&lt;/div&gt;WrittenWord createWrittenWord()" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="b5EGZw9agn4j5jKMZ0zt-16">
+          <mxGeometry y="344" width="200" height="157" as="geometry" />
+        </mxCell>
+        <mxCell id="b5EGZw9agn4j5jKMZ0zt-20" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="b5EGZw9agn4j5jKMZ0zt-7" target="b5EGZw9agn4j5jKMZ0zt-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b5EGZw9agn4j5jKMZ0zt-21" value="Sculpture final : public Artwork" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-184" y="794" width="200" height="503" as="geometry" />
+        </mxCell>
+        <mxCell id="b5EGZw9agn4j5jKMZ0zt-23" value="&lt;div&gt;+enum class Medium&lt;/div&gt;&lt;div&gt;-Dimensions dimensions&lt;/div&gt;&lt;div&gt;+int numberOfSculptures&lt;/div&gt;&lt;div&gt;-double weight&lt;br&gt;&lt;/div&gt;+Medium medium" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="b5EGZw9agn4j5jKMZ0zt-21">
+          <mxGeometry y="24" width="199" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="b5EGZw9agn4j5jKMZ0zt-24" value="&lt;div&gt;+Sculpture()&lt;/div&gt;&lt;div&gt;+string getMediumAsString()&lt;/div&gt;&lt;div&gt;+string toString() override&lt;br&gt;&lt;/div&gt;&lt;div&gt;+double value() override&lt;/div&gt;&lt;div&gt;+void setDimensions()&lt;/div&gt;&lt;div&gt;+Dimensions getDimensions()&lt;/div&gt;&lt;div&gt;+void setWeight()&lt;/div&gt;&lt;div&gt;+double getWeight()&lt;br&gt;&lt;/div&gt;+int getNumberOfPaintings()" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="b5EGZw9agn4j5jKMZ0zt-21">
+          <mxGeometry y="167" width="198" height="178" as="geometry" />
+        </mxCell>
+        <mxCell id="b5EGZw9agn4j5jKMZ0zt-25" value="&lt;div&gt;Helper Functions (non members):&lt;/div&gt;&lt;div&gt;Painting::Medium parseSculptureMedium()&lt;/div&gt;Sculpture createSculpture()" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="b5EGZw9agn4j5jKMZ0zt-21">
+          <mxGeometry y="345" width="199" height="157" as="geometry" />
+        </mxCell>
+        <mxCell id="b5EGZw9agn4j5jKMZ0zt-22" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="b5EGZw9agn4j5jKMZ0zt-7" target="b5EGZw9agn4j5jKMZ0zt-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b5EGZw9agn4j5jKMZ0zt-28" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="b5EGZw9agn4j5jKMZ0zt-27" target="b5EGZw9agn4j5jKMZ0zt-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b5EGZw9agn4j5jKMZ0zt-29" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="b5EGZw9agn4j5jKMZ0zt-27" target="b5EGZw9agn4j5jKMZ0zt-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b5EGZw9agn4j5jKMZ0zt-27" value="Dimensions" style="swimlane;whiteSpace=wrap;html=1;startSize=23;" vertex="1" parent="1">
+          <mxGeometry x="-42" y="1418" width="200" height="202" as="geometry" />
+        </mxCell>
+        <mxCell id="b5EGZw9agn4j5jKMZ0zt-30" value="&lt;div&gt;-double width&lt;/div&gt;&lt;div&gt;-double height&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="b5EGZw9agn4j5jKMZ0zt-27">
+          <mxGeometry y="23" width="200" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="b5EGZw9agn4j5jKMZ0zt-31" value="&lt;div&gt;+Dimensions()&lt;/div&gt;&lt;div&gt;+void setWidth()&lt;/div&gt;&lt;div&gt;+void setHeight()&lt;/div&gt;&lt;div&gt;+double getWidth()&lt;/div&gt;&lt;div&gt;+double getHeight()&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="b5EGZw9agn4j5jKMZ0zt-27">
+          <mxGeometry x="1" y="99" width="199" height="103" as="geometry" />
+        </mxCell>
+        <mxCell id="b5EGZw9agn4j5jKMZ0zt-35" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="b5EGZw9agn4j5jKMZ0zt-32" target="b5EGZw9agn4j5jKMZ0zt-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b5EGZw9agn4j5jKMZ0zt-32" value="Date" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-292" y="100" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="b5EGZw9agn4j5jKMZ0zt-33" value="&lt;div&gt;-int month&lt;/div&gt;&lt;div&gt;-int day&lt;/div&gt;&lt;div&gt;-int year&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="b5EGZw9agn4j5jKMZ0zt-32">
+          <mxGeometry y="22" width="199" height="67" as="geometry" />
+        </mxCell>
+        <mxCell id="b5EGZw9agn4j5jKMZ0zt-34" value="&lt;div&gt;+Date()&lt;/div&gt;&lt;div&gt;+string toString()&lt;/div&gt;&lt;div&gt;+int getYear()&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="b5EGZw9agn4j5jKMZ0zt-32">
+          <mxGeometry y="89" width="200" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="b5EGZw9agn4j5jKMZ0zt-39" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-92" y="428.05841924398624" as="sourcePoint" />
+            <mxPoint x="99" y="262" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b5EGZw9agn4j5jKMZ0zt-36" value="Name" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-292" y="371" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="b5EGZw9agn4j5jKMZ0zt-37" value="&lt;div&gt;-string firstName&lt;/div&gt;&lt;div&gt;-string lastName&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="b5EGZw9agn4j5jKMZ0zt-36">
+          <mxGeometry y="22" width="200" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="b5EGZw9agn4j5jKMZ0zt-38" value="&lt;div&gt;+Name()&lt;/div&gt;&lt;div&gt;+string toString&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="b5EGZw9agn4j5jKMZ0zt-36">
+          <mxGeometry y="110" width="200" height="89" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
