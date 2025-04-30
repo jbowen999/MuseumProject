@@ -7,4 +7,5 @@ When the program starts, artworks.csv is parsed and objects are created and stor
 
 This project is strucutred as follows.
 
-<pre> Museum/ ├── CMakeLists.txt ├── include/ │ ├── Artwork.h │ ├── Date.h │ ├── Dimensions.h │ ├── Name.h │ ├── Painting.h │ ├── Sculpture.h │ ├── WrittenWord.h ├── src/ │ ├── main.cpp │ ├── Artwork.cpp │ ├── Date.cpp │ ├── Dimensions.cpp │ ├── Name.cpp │ ├── Painting.cpp │ ├── Sculpture.cpp │ ├── WrittenWord.cpp ├── data/ │ └── artworks.csv │ └── MuseumProject-UML └── README.md </pre>
+<pre> Museum/ ├── CMakeLists.txt ├── include/ │ ├── Artwork.h │ ├── Date.h │ ├── Dimensions.h │ ├── Name.h │ ├── Painting.h │ ├── Sculpture.h │ ├── WrittenWord.h ├── src/ │ ├── main.cpp │ ├── Artwork.cpp │ ├── Date.cpp │ ├── Dimensions.cpp │ ├── Name.cpp │ ├── Painting.cpp │ ├── Sculpture.cpp │ ├── WrittenWord.cpp ├── data/ │ └── artworks.csv │ └── Museum-UML.drawio └── README.md </pre>
+
