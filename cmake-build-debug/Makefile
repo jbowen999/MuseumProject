@@ -272,6 +272,30 @@ src/Sculpture.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Museum.dir\build.make CMakeFiles/Museum.dir/src/Sculpture.cpp.s
 .PHONY : src/Sculpture.cpp.s
 
+src/WrittenWord.obj: src/WrittenWord.cpp.obj
+.PHONY : src/WrittenWord.obj
+
+# target to build an object file
+src/WrittenWord.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Museum.dir\build.make CMakeFiles/Museum.dir/src/WrittenWord.cpp.obj
+.PHONY : src/WrittenWord.cpp.obj
+
+src/WrittenWord.i: src/WrittenWord.cpp.i
+.PHONY : src/WrittenWord.i
+
+# target to preprocess a source file
+src/WrittenWord.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Museum.dir\build.make CMakeFiles/Museum.dir/src/WrittenWord.cpp.i
+.PHONY : src/WrittenWord.cpp.i
+
+src/WrittenWord.s: src/WrittenWord.cpp.s
+.PHONY : src/WrittenWord.s
+
+# target to generate assembly for a file
+src/WrittenWord.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Museum.dir\build.make CMakeFiles/Museum.dir/src/WrittenWord.cpp.s
+.PHONY : src/WrittenWord.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -323,6 +347,9 @@ help:
 	@echo ... src/Sculpture.obj
 	@echo ... src/Sculpture.i
 	@echo ... src/Sculpture.s
+	@echo ... src/WrittenWord.obj
+	@echo ... src/WrittenWord.i
+	@echo ... src/WrittenWord.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

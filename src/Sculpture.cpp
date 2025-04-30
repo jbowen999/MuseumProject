@@ -50,7 +50,7 @@ string Sculpture::toString() const {
 
 double Sculpture::value() const {
     // Calculate age
-    constexpr int currentYear = 2025; // or get it from system date
+    constexpr int currentYear = 2025;
     const int age = currentYear - getCreatedDate().getYear();
 
     // Calculate area in square feet (1 sq ft = 144 sq in)

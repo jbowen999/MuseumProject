@@ -7,3 +7,12 @@ Sculpture,Michelangelo,Buonarroti,David,9,13,1501,6,8,1873,Lorenzo,Medici,30,96,
 Sculpture,Auguste,Rodin,The Thinker,4,1,1904,9,21,1922,Museum,Rodin,20,36,1800,Metal,thinker.txt
 Sculpture,Barbara,Hepworth,Single Form,3,17,1964,11,5,1972,UNESCO,Foundation,40,80,2500,Mixed_Media,singleform.txt
 Sculpture,Henry,Moore,Reclining Figure,8,12,1938,2,2,1945,Tate,Britain,50,100,4000,Ceramic,reclining.txt
+WrittenWord,Jane,Austen,Pride and Prejudice,1,28,1813,3,15,1910,Henry,Smith,432,Novel
+WrittenWord,George,Orwell,1984,6,8,1949,9,12,2000,Alice,Johnson,328,Novel
+WrittenWord,Maya,Angelou,And Still I Rise,4,3,1978,5,10,1995,Robert,Lee,120,Poetry
+WrittenWord,Stephen,Hawking,A Brief History of Time,3,1,1988,4,15,1999,Susan,White,212,Nonfiction
+WrittenWord,Michelle,Obama,Becoming,11,13,2018,1,1,2020,James,Brown,448,Autobiography
+WrittenWord,Various,Authors,The Norton Anthology of English Literature,2,14,2005,6,5,2012,Karen,Wu,1560,Anthology
+WrittenWord,Beatrix,Potter,The Tale of Peter Rabbit,10,2,1902,7,7,1940,Mary,Nguyen,72,Illustrated
+WrittenWord,Malcolm,Gladwell,Outliers,11,18,2008,2,2,2013,Linda,Martinez,304,Nonfiction
+WrittenWord,Langston,Hughes,The Weary Blues,9,15,1926,10,1,1975,Daniel,Hernandez,89,Poetry

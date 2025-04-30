@@ -16,4 +16,6 @@ add_executable(Museum src/main.cpp
         include/Painting.h
         src/Sculpture.cpp
         include/Sculpture.h
+        src/WrittenWord.cpp
+        include/WrittenWord.h
 )

@@ -14,6 +14,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/Julian/CLionProjects/Museum/src/Name.cpp" "CMakeFiles/Museum.dir/src/Name.cpp.obj" "gcc" "CMakeFiles/Museum.dir/src/Name.cpp.obj.d"
   "C:/Users/Julian/CLionProjects/Museum/src/Painting.cpp" "CMakeFiles/Museum.dir/src/Painting.cpp.obj" "gcc" "CMakeFiles/Museum.dir/src/Painting.cpp.obj.d"
   "C:/Users/Julian/CLionProjects/Museum/src/Sculpture.cpp" "CMakeFiles/Museum.dir/src/Sculpture.cpp.obj" "gcc" "CMakeFiles/Museum.dir/src/Sculpture.cpp.obj.d"
+  "C:/Users/Julian/CLionProjects/Museum/src/WrittenWord.cpp" "CMakeFiles/Museum.dir/src/WrittenWord.cpp.obj" "gcc" "CMakeFiles/Museum.dir/src/WrittenWord.cpp.obj.d"
   "C:/Users/Julian/CLionProjects/Museum/src/main.cpp" "CMakeFiles/Museum.dir/src/main.cpp.obj" "gcc" "CMakeFiles/Museum.dir/src/main.cpp.obj.d"
   )
 

@@ -3,6 +3,7 @@
 #include <memory>
 #include "../include/Painting.h"
 #include "../include/Sculpture.h"
+#include "../include/WrittenWord.h"
 
 using namespace std;
 
@@ -39,7 +40,10 @@ vector<unique_ptr<Artwork> > loadData(const string &filename) {
             artworks.push_back(make_unique<Painting>(createPainting(fields)));
         } else if (fields[0] == "Sculpture") {
             artworks.push_back(make_unique<Sculpture>(createSculpture(fields)));
-        }else {
+        } else if (fields[0] == "WrittenWord") {
+            artworks.push_back(make_unique<WrittenWord>(createWrittenWord(fields)));
+        }
+        else {
             cerr << "Unknown artwork type: " << fields[0] << endl;
         }
     }

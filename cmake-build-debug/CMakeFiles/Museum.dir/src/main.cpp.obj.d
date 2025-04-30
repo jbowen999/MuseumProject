@@ -203,4 +203,5 @@ CMakeFiles/Museum.dir/src/main.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2024.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/span \
  C:/Program\ Files/JetBrains/CLion\ 2024.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/variant \
  C:/Program\ Files/JetBrains/CLion\ 2024.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/parse_numbers.h \
- C:/Users/Julian/CLionProjects/Museum/include/Sculpture.h
+ C:/Users/Julian/CLionProjects/Museum/include/Sculpture.h \
+ C:/Users/Julian/CLionProjects/Museum/include/WrittenWord.h
