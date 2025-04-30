@@ -13,12 +13,12 @@ public:
     enum class Medium { Ceramic, Stone, Metal, Mixed_Media };
 
 private:
-    static int numberOfSculptures;
     Dimensions dimensions = Dimensions(0, 0);
     double weight = 0;
     string asciiArtFilename;
 
 public:
+    static int numberOfSculptures;
     Medium medium;
 
     Sculpture(const string &artistFirst,

@@ -13,11 +13,11 @@ public:
     enum class Medium { Novel, Biography, Anthology, Illustrated, Autobiography, Nonfiction, Poetry};
 
 private:
-    static int numberOfWrittenWordItems;
     int numPages = 0;
     string asciiArtFilename;
 
 public:
+    static int numberOfWrittenWordItems;
     Medium medium;
 
     WrittenWord(const string &artistFirst,

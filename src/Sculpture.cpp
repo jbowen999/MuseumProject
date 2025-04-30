@@ -26,6 +26,7 @@ Sculpture::Sculpture(const string &artistFirst, const string &artistLast,
     numberOfSculptures++;
 }
 
+
 string Sculpture::getMediumAsString() const {
     switch (medium) {
         case Medium::Ceramic: return "Ceramic";

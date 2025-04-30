@@ -14,11 +14,11 @@ public:
     enum class Medium { Oil, Acrylic, Watercolor, Mixed_Media };
 
 private:
-    static int numberOfPaintings;
     Dimensions dimensions = Dimensions(0, 0);
     string asciiArtFilename;
 
 public:
+    static int numberOfPaintings;
     Medium medium;
 
     Painting(const string &artistFirst,

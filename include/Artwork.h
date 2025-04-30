@@ -4,7 +4,7 @@
 
 #ifndef ARTWORK_H
 #define ARTWORK_H
-#include <vector>
+#include <vector> // including here so every other file will have it
 #include "../include/Date.h"
 #include "../include/Name.h"
 #include "../include/Dimensions.h"
@@ -16,7 +16,6 @@ class Artwork {
     Date created;
     Date acquired;
     Name donatedBy;
-    std::string assciArtFilename;
 
 public:
     Artwork();

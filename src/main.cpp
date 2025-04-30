@@ -7,23 +7,24 @@
 
 using namespace std;
 
+// Helper function for parsing data from file
 std::vector<std::string> split(const std::string &line, const char delimiter) {
-    std::vector<std::string> result;
-    size_t start = 0;
-    size_t end;
+    std::vector<std::string> result; // initialize vector
+    size_t start = 0, end; // initialize start and end points
 
     while ((end = line.find(delimiter, start)) != std::string::npos) {
         result.push_back(line.substr(start, end - start));
         start = end + 1;
-    }
+    } // loop through the line until it gets to the last item
 
     result.push_back(line.substr(start)); // last piece
 
     return result;
 }
 
+// loads data from file
 vector<unique_ptr<Artwork> > loadData(const string &filename) {
-    vector<unique_ptr<Artwork> > artworks;
+    vector<unique_ptr<Artwork> > artworks; // initialize vector to be returned
     ifstream file(filename);
     if (!file) {
         cerr << "Failed to open " << filename << endl;
@@ -32,10 +33,11 @@ vector<unique_ptr<Artwork> > loadData(const string &filename) {
 
     string line;
     while (getline(file, line)) {
-        vector<string> fields = split(line, ',');
+        vector<string> fields = split(line, ','); // call the split function with ',' as delimeter
 
         if (fields.empty()) continue;
 
+        // Branch to decide what kind of artwork is being read
         if (fields[0] == "Painting") {
             artworks.push_back(make_unique<Painting>(createPainting(fields)));
         } else if (fields[0] == "Sculpture") {
@@ -64,6 +66,10 @@ int main() {
     for (const auto &art: artworks) {
         cout << art->toString() << "\n\n";
     }
+
+    cout << "Paintings total=" << Painting::numberOfPaintings << endl;
+    cout << "Paintings total=" << Sculpture::numberOfSculptures << endl;
+    cout << "Paintings total=" << WrittenWord::numberOfWrittenWordItems << endl;
 
     return 0;
 }

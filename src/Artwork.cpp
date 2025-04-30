@@ -5,9 +5,8 @@
 #include "../include/Artwork.h"
 
 Artwork::Artwork() : artist("", ""),
-                     title(""), created(0, 0, 0),
-                     acquired(0, 0, 0), donatedBy("", ""),
-                     assciArtFilename("") {}
+                     title(), created(0, 0, 0),
+                     acquired(0, 0, 0), donatedBy("", "") {}
 
 Artwork::~Artwork() = default;
 

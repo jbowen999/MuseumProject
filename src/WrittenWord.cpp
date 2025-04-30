@@ -24,6 +24,7 @@ WrittenWord::WrittenWord(const string &artistFirst, const string &artistLast,
     numberOfWrittenWordItems++;
 }
 
+
 string WrittenWord::getMediumAsString() const {
     switch (medium) {
         case Medium::Novel: return "Novel";
