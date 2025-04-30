@@ -28,7 +28,7 @@ public:
              int acquiredMonth, int acquiredDay,
              int acquiredYear, const string &donatedFirst,
              const string &donatedLast, double w,
-             double h, Medium medium, const string &asciiArtFilename);
+             double h, Medium medium);
 
     string getMediumAsString() const;
     string toString() const override;

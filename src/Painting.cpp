@@ -12,7 +12,7 @@ Painting::Painting(const string &artistFirst, const string &artistLast,
                      const int acquiredMonth, const int acquiredDay,
                      const int acquiredYear, const string &donatedFirst,
                      const string &donatedLast, const double w, const double h,
-                     const Medium medium, const std::string &asciiArtFilename)
+                     const Medium medium)
 {
     setArtist(artistFirst, artistLast);
     setTitle(title);
@@ -91,7 +91,6 @@ Painting createPainting(const vector<string> &fields) {
     const double w = stod(fields[12]);
     const double h = stod(fields[13]);
     const Painting::Medium medium = parsePaintingMedium(fields[14]);
-    const string &asciiArtFilename = fields[15];
 
     return Painting(
         artistFirstName, artistLastName,
@@ -100,7 +99,6 @@ Painting createPainting(const vector<string> &fields) {
         acquiredMonth, acquiredDay, acquiredYear,
         donatedFirst, donatedLast,
         w, h,
-        medium,
-        asciiArtFilename
+        medium
     );
 }

@@ -33,7 +33,7 @@ vector<unique_ptr<Artwork> > loadData(const string &filename) {
 
     string line;
     while (getline(file, line)) {
-        vector<string> fields = split(line, ','); // call the split function with ',' as delimeter
+        vector<string> fields = split(line, ','); // call the split function with ',' as delimiter
 
         if (fields.empty()) continue;
 
@@ -55,6 +55,7 @@ vector<unique_ptr<Artwork> > loadData(const string &filename) {
 
 
 int main() {
+
     const string filename = "../data/artworks.csv";
     const vector<unique_ptr<Artwork> > artworks = loadData(filename);
 

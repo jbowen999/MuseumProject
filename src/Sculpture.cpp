@@ -13,8 +13,7 @@ Sculpture::Sculpture(const string &artistFirst, const string &artistLast,
                      const int acquiredMonth, const int acquiredDay,
                      const int acquiredYear, const string &donatedFirst,
                      const string &donatedLast, const double w, const double h,
-                     const double weight, const Medium medium,
-                     const std::string &asciiArtFilename) {
+                     const double weight, const Medium medium) {
     setArtist(artistFirst, artistLast);
     setTitle(title);
     setCreatedDate(createdMonth, createdDay, createdYear);
@@ -96,7 +95,6 @@ Sculpture createSculpture(const vector<string> &fields) {
     const double h = stod(fields[13]);
     const double weight = stod(fields[14]);
     const Sculpture::Medium medium = parseSculptureMedium(fields[15]);
-    const string &asciiArtFilename = fields[16];
 
     return Sculpture(
         artistFirstName, artistLastName,
@@ -105,7 +103,6 @@ Sculpture createSculpture(const vector<string> &fields) {
         acquiredMonth, acquiredDay, acquiredYear,
         donatedFirst, donatedLast,
         w, h, weight,
-        medium,
-        asciiArtFilename
+        medium
     );
 }
