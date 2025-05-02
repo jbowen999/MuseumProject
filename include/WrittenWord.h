@@ -14,11 +14,10 @@ public:
 
 private:
     int numPages = 0;
-    string asciiArtFilename;
+    Medium medium;
 
 public:
     static int numberOfWrittenWordItems;
-    Medium medium;
 
     WrittenWord(const string &artistFirst,
              const string &artistLast,
@@ -26,7 +25,7 @@ public:
              int createdDay, int createdYear,
              int acquiredMonth, int acquiredDay,
              int acquiredYear, const string &donatedFirst,
-             const string &donatedLast, int numPages, Medium medium);
+             const string &donatedLast, int numPages, Medium medium, const string& description);
 
     string getMediumAsString() const;
     string toString() const override;

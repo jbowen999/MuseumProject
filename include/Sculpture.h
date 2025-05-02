@@ -15,11 +15,10 @@ public:
 private:
     Dimensions dimensions = Dimensions(0, 0);
     double weight = 0;
-    string asciiArtFilename;
+    Medium medium;
 
 public:
     static int numberOfSculptures;
-    Medium medium;
 
     Sculpture(const string &artistFirst,
              const string &artistLast,
@@ -28,7 +27,7 @@ public:
              int acquiredMonth, int acquiredDay,
              int acquiredYear, const string &donatedFirst,
              const string &donatedLast, double w,
-             double h, double weight, Medium medium);
+             double h, double weight, Medium medium, const string& description);
 
     string getMediumAsString() const;
     string toString() const override;

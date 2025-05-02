@@ -1,9 +1,18 @@
-Painting,Leonardo,da Vinci,Mona Lisa,10,1,1503,9,14,1797,Napoleon,Bonaparte,30,21,Oil
-Painting,Vincent,van Gogh,Starry Night,6,1,1889,5,10,1941,Museum,of Modern Art,29,36.25,Oil
-Painting,Claude,Monet,Water Lilies,5,15,1906,7,20,1920,Georges,Clemenceau,39,32,Watercolor
-Sculpture,Michelangelo,Buonarroti,David,9,13,1501,6,8,1873,Lorenzo,Medici,30,96,6000,Stone
-Sculpture,Auguste,Rodin,The Thinker,4,1,1904,9,21,1922,Museum,Rodin,20,36,1800,Metal
-Sculpture,Barbara,Hepworth,Single Form,3,17,1964,11,5,1972,UNESCO,Foundation,40,80,2500,Mixed_Media
-WrittenWord,Jane,Austen,Pride and Prejudice,1,28,1813,3,15,1910,Henry,Smith,432,Novel
-WrittenWord,George,Orwell,1984,6,8,1949,9,12,2000,Alice,Johnson,328,Novel
-WrittenWord,Maya,Angelou,And Still I Rise,4,3,1978,5,10,1995,Robert,Lee,120,Poetry
+Painting,Leonardo,da Vinci,Mona Lisa,10,1,1503,9,14,1797,Napoleon,Bonaparte,30,21,Oil,"A portrait of Lisa Gherardini. Famous for her enigmatic expression."
+Painting,Vincent,van Gogh,Starry Night,6,1,1889,5,10,1941,Museum,of Modern Art,29,36.25,Oil,"Swirling night sky over a quiet town. One of Van Gogh's most iconic works."
+Painting,Claude,Monet,Water Lilies,5,15,1906,7,20,1920,Georges,Clemenceau,39,32,Watercolor,"A serene pond with floating lilies. Captures Monet's love of nature."
+Painting,Georgia,O'Keeffe,Red Canna,9,2,1924,4,4,1930,Alfred,Stieglitz,36,30,Acrylic,"A close-up floral painting. Known for its vibrant color and detail."
+Painting,Jackson,Pollock,Number 5,11,1,1948,1,1,1949,Samuel,Irving,48,96,Mixed_Media,"Abstract expressionism with splattered paint. A chaotic and famous piece."
+Sculpture,Michelangelo,Buonarroti,David,9,13,1501,6,8,1873,Lorenzo,Medici,30,96,6000,Stone,"A marble statue of the biblical David. Symbol of strength and youthful beauty."
+Sculpture,Auguste,Rodin,The Thinker,4,1,1904,9,21,1922,Museum,Rodin,20,36,1800,Metal,"A contemplative seated figure. Represents philosophy and introspection."
+Sculpture,Barbara,Hepworth,Single Form,3,17,1964,11,5,1972,UNESCO,Foundation,40,80,2500,Mixed_Media,"Modern abstract sculpture. Celebrates unity and communication."
+Sculpture,Henry,Moore,Reclining Figure,8,12,1938,2,2,1945,Tate,Britain,50,100,4000,Ceramic,"A stylized reclining human form. Balances organic and abstract shapes."
+WrittenWord,Jane,Austen,Pride and Prejudice,1,28,1813,3,15,1910,Henry,Smith,432,Novel,"A romantic novel of manners. Features Elizabeth Bennet and Mr. Darcy."
+WrittenWord,George,Orwell,1984,6,8,1949,9,12,2000,Alice,Johnson,328,Novel,"A dystopian tale of surveillance and control. Introduced the term 'Big Brother'."
+WrittenWord,Maya,Angelou,And Still I Rise,4,3,1978,5,10,1995,Robert,Lee,120,Poetry,"Empowering poems about resilience and identity. A celebration of Black womanhood."
+WrittenWord,Stephen,Hawking,A Brief History of Time,3,1,1988,4,15,1999,Susan,White,212,Nonfiction,"Explores the nature of the universe. Makes complex science accessible to all."
+WrittenWord,Michelle,Obama,Becoming,11,13,2018,1,1,2020,James,Brown,448,Autobiography,"A memoir by the former First Lady. Shares her life story and values."
+WrittenWord,Various,Authors,The Norton Anthology of English Literature,2,14,2005,6,5,2012,Karen,Wu,1560,Anthology,"A comprehensive collection of English literature. Spans from medieval to modern texts."
+WrittenWord,Beatrix,Potter,The Tale of Peter Rabbit,10,2,1902,7,7,1940,Mary,Nguyen,72,Illustrated,"A children's story about a mischievous rabbit. Famous for its charming illustrations."
+WrittenWord,Malcolm,Gladwell,Outliers,11,18,2008,2,2,2013,Linda,Martinez,304,Nonfiction,"Analyzes the factors behind high achievement. Popularized the '10,000-hour rule'."
+WrittenWord,Langston,Hughes,The Weary Blues,9,15,1926,10,1,1975,Daniel,Hernandez,89,Poetry,"A poetry collection infused with jazz rhythms. Captures Black life and culture."

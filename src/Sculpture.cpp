@@ -13,7 +13,7 @@ Sculpture::Sculpture(const string &artistFirst, const string &artistLast,
                      const int acquiredMonth, const int acquiredDay,
                      const int acquiredYear, const string &donatedFirst,
                      const string &donatedLast, const double w, const double h,
-                     const double weight, const Medium medium) {
+                     const double weight, const Medium medium, const string &description) {
     setArtist(artistFirst, artistLast);
     setTitle(title);
     setCreatedDate(createdMonth, createdDay, createdYear);
@@ -22,9 +22,18 @@ Sculpture::Sculpture(const string &artistFirst, const string &artistLast,
     setDimensions(h, w);
     this->weight = weight;
     this->medium = medium;
+    setDescription(description);
     numberOfSculptures++;
 }
 
+void Sculpture::setDimensions(const double h, const double w) {
+    dimensions.setHeight(h);
+    dimensions.setWidth(w);
+}
+
+Dimensions Sculpture::getDimensions() const {
+    return dimensions;
+}
 
 string Sculpture::getMediumAsString() const {
     switch (medium) {
@@ -36,9 +45,18 @@ string Sculpture::getMediumAsString() const {
     }
 }
 
+Sculpture::Medium parseSculptureMedium(const std::string &str) {
+    if (str == "Ceramic") return Sculpture::Medium::Ceramic;
+    if (str == "Stone") return Sculpture::Medium::Stone;
+    if (str == "Metal") return Sculpture::Medium::Metal;
+    if (str == "Mixed_Media") return Sculpture::Medium::Mixed_Media;
+    throw std::invalid_argument("Unknown medium: " + str);
+}
+
 string Sculpture::toString() const {
     return "Sculpture: \"" + getTitle() + "\"\n"
            "Artist: " + getArtist().toString() + "\n"
+           "Description: " + getDescription() + "\n"
            "Created: " + getCreatedDate().toString() + "\n"
            "Acquired: " + getAcquiredDate().toString() + "\n"
            "Donated by: " + getDonatedBy().toString() + "\n"
@@ -53,31 +71,9 @@ double Sculpture::value() const {
     constexpr int currentYear = 2025;
     const int age = currentYear - getCreatedDate().getYear();
 
-    // Calculate area in square feet (1 sq ft = 144 sq in)
-    const double areaInSquareInches = dimensions.getHeight() * dimensions.getWidth();
-    const double areaInSquareFeet = areaInSquareInches / 144.0;
-
-    // Final value
-    return age * areaInSquareFeet;
+    return age * weight;
 }
 
-void Sculpture::setDimensions(const double h, const double w) {
-    dimensions.setHeight(h);
-    dimensions.setWidth(w);
-}
-
-Dimensions Sculpture::getDimensions() const {
-    return dimensions;
-}
-
-
-Sculpture::Medium parseSculptureMedium(const std::string &str) {
-    if (str == "Ceramic") return Sculpture::Medium::Ceramic;
-    if (str == "Stone") return Sculpture::Medium::Stone;
-    if (str == "Metal") return Sculpture::Medium::Metal;
-    if (str == "Mixed_Media") return Sculpture::Medium::Mixed_Media;
-    throw std::invalid_argument("Unknown medium: " + str);
-}
 
 Sculpture createSculpture(const vector<string> &fields) {
     const string &artistFirstName = fields[1];
@@ -95,6 +91,8 @@ Sculpture createSculpture(const vector<string> &fields) {
     const double h = stod(fields[13]);
     const double weight = stod(fields[14]);
     const Sculpture::Medium medium = parseSculptureMedium(fields[15]);
+    const string &description = fields[16];
+
 
     return Sculpture(
         artistFirstName, artistLastName,
@@ -103,6 +101,6 @@ Sculpture createSculpture(const vector<string> &fields) {
         acquiredMonth, acquiredDay, acquiredYear,
         donatedFirst, donatedLast,
         w, h, weight,
-        medium
+        medium, description
     );
 }

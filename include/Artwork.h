@@ -16,25 +16,28 @@ class Artwork {
     Date created;
     Date acquired;
     Name donatedBy;
+    std::string description;
 
 public:
     Artwork();
     virtual ~Artwork() = 0;
 
-    [[nodiscard]] std::string virtual toString() const = 0;
-    [[nodiscard]] double virtual value() const = 0;
+    std::string virtual toString() const = 0;
+    double virtual value() const = 0;
 
     void setArtist(const std::string &f, const std::string &l);
     void setTitle(const std::string &t);
-    void setCreatedDate(const int m, const int d, const int y);
-    void setAcquiredDate(const int m, const int d, const int y);
+    void setCreatedDate(int m, int d, int y);
+    void setAcquiredDate(int m, int d, int y);
     void setDonatedBy(const std::string &f, const std::string &l);
+    void setDescription(const std::string& d);
 
     Name getArtist() const;
     std::string getTitle() const;
     Date getCreatedDate() const;
     Date getAcquiredDate() const;
     Name getDonatedBy() const;
+    std::string getDescription() const;
 
     bool operator==(const Artwork& other) const;
     bool operator!=(const Artwork& other) const;

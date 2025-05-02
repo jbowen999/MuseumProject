@@ -4,16 +4,15 @@
 
 #include "../include/Painting.h"
 
-int Painting::numberOfPaintings = 0;  // Initialize the static variable
+int Painting::numberOfPaintings = 0; // Initialize the static variable
 
 Painting::Painting(const string &artistFirst, const string &artistLast,
-                     const string &title, const int createdMonth,
-                     const int createdDay, const int createdYear,
-                     const int acquiredMonth, const int acquiredDay,
-                     const int acquiredYear, const string &donatedFirst,
-                     const string &donatedLast, const double w, const double h,
-                     const Medium medium)
-{
+                   const string &title, const int createdMonth,
+                   const int createdDay, const int createdYear,
+                   const int acquiredMonth, const int acquiredDay,
+                   const int acquiredYear, const string &donatedFirst,
+                   const string &donatedLast, const double w, const double h,
+                   const Medium medium, const string &description) {
     setArtist(artistFirst, artistLast);
     setTitle(title);
     setCreatedDate(createdMonth, createdDay, createdYear);
@@ -21,7 +20,17 @@ Painting::Painting(const string &artistFirst, const string &artistLast,
     setDonatedBy(donatedFirst, donatedLast);
     setDimensions(h, w);
     this->medium = medium;
+    setDescription(description);
     numberOfPaintings++;
+}
+
+void Painting::setDimensions(const double h, const double w) {
+    dimensions.setHeight(h);
+    dimensions.setWidth(w);
+}
+
+Dimensions Painting::getDimensions() const {
+    return dimensions;
 }
 
 string Painting::getMediumAsString() const {
@@ -34,9 +43,18 @@ string Painting::getMediumAsString() const {
     }
 }
 
+Painting::Medium parsePaintingMedium(const std::string &str) {
+    if (str == "Oil") return Painting::Medium::Oil;
+    if (str == "Acrylic") return Painting::Medium::Acrylic;
+    if (str == "Watercolor") return Painting::Medium::Watercolor;
+    if (str == "Mixed_Media") return Painting::Medium::Mixed_Media;
+    throw std::invalid_argument("Unknown medium: " + str);
+}
+
 string Painting::toString() const {
     return "Painting: \"" + getTitle() + "\"\n"
            "Artist: " + getArtist().toString() + "\n"
+           "Description: " + getDescription() + "\n"
            "Created: " + getCreatedDate().toString() + "\n"
            "Acquired: " + getAcquiredDate().toString() + "\n"
            "Donated by: " + getDonatedBy().toString() + "\n"
@@ -54,26 +72,7 @@ double Painting::value() const {
     const double areaInSquareInches = dimensions.getHeight() * dimensions.getWidth();
     const double areaInSquareFeet = areaInSquareInches / 144.0;
 
-    // Final value
     return age * areaInSquareFeet;
-}
-
-void Painting::setDimensions(const double h, const double w) {
-    dimensions.setHeight(h);
-    dimensions.setWidth(w);
-}
-
-Dimensions Painting::getDimensions() const {
-    return dimensions;
-}
-
-
-Painting::Medium parsePaintingMedium(const std::string &str) {
-    if (str == "Oil") return Painting::Medium::Oil;
-    if (str == "Acrylic") return Painting::Medium::Acrylic;
-    if (str == "Watercolor") return Painting::Medium::Watercolor;
-    if (str == "Mixed_Media") return Painting::Medium::Mixed_Media;
-    throw std::invalid_argument("Unknown medium: " + str);
 }
 
 Painting createPainting(const vector<string> &fields) {
@@ -91,6 +90,7 @@ Painting createPainting(const vector<string> &fields) {
     const double w = stod(fields[12]);
     const double h = stod(fields[13]);
     const Painting::Medium medium = parsePaintingMedium(fields[14]);
+    const string &description = fields[15];
 
     return Painting(
         artistFirstName, artistLastName,
@@ -99,6 +99,6 @@ Painting createPainting(const vector<string> &fields) {
         acquiredMonth, acquiredDay, acquiredYear,
         donatedFirst, donatedLast,
         w, h,
-        medium
+        medium, description
     );
 }

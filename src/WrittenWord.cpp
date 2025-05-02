@@ -12,8 +12,8 @@ WrittenWord::WrittenWord(const string &artistFirst, const string &artistLast,
                          const int createdDay, const int createdYear,
                          const int acquiredMonth, const int acquiredDay,
                          const int acquiredYear, const string &donatedFirst,
-                         const string &donatedLast, int numPages,
-                         const Medium medium) {
+                         const string &donatedLast, const int numPages,
+                         const Medium medium, const string &description) {
     setArtist(artistFirst, artistLast);
     setTitle(title);
     setCreatedDate(createdMonth, createdDay, createdYear);
@@ -21,6 +21,7 @@ WrittenWord::WrittenWord(const string &artistFirst, const string &artistLast,
     setDonatedBy(donatedFirst, donatedLast);
     this->numPages = numPages;
     this->medium = medium;
+    setDescription(description);
     numberOfWrittenWordItems++;
 }
 
@@ -38,9 +39,21 @@ string WrittenWord::getMediumAsString() const {
     }
 }
 
+WrittenWord::Medium parseWrittenWordMedium(const std::string &str) {
+    if (str == "Novel") return WrittenWord::Medium::Novel;
+    if (str == "Biography") return WrittenWord::Medium::Biography;
+    if (str == "Anthology") return WrittenWord::Medium::Anthology;
+    if (str == "Illustrated") return WrittenWord::Medium::Illustrated;
+    if (str == "Autobiography") return WrittenWord::Medium::Autobiography;
+    if (str == "Nonfiction") return WrittenWord::Medium::Nonfiction;
+    if (str == "Poetry") return WrittenWord::Medium::Poetry;
+    throw std::invalid_argument("Unknown medium: " + str);
+}
+
 string WrittenWord::toString() const {
     return "WrittenWord: \"" + getTitle() + "\"\n"
            "Artist: " + getArtist().toString() + "\n"
+           "Description: " + getDescription() + "\n"
            "Created: " + getCreatedDate().toString() + "\n"
            "Acquired: " + getAcquiredDate().toString() + "\n"
            "Donated by: " + getDonatedBy().toString() + "\n"
@@ -58,16 +71,6 @@ double WrittenWord::value() const {
     return age * (static_cast<double>(numPages) / 100);
 }
 
-WrittenWord::Medium parseWrittenWordMedium(const std::string &str) {
-    if (str == "Novel") return WrittenWord::Medium::Novel;
-    if (str == "Biography") return WrittenWord::Medium::Biography;
-    if (str == "Anthology") return WrittenWord::Medium::Anthology;
-    if (str == "Illustrated") return WrittenWord::Medium::Illustrated;
-    if (str == "Autobiography") return WrittenWord::Medium::Autobiography;
-    if (str == "Nonfiction") return WrittenWord::Medium::Nonfiction;
-    if (str == "Poetry") return WrittenWord::Medium::Poetry;
-    throw std::invalid_argument("Unknown medium: " + str);
-}
 
 WrittenWord createWrittenWord(const vector<string> &fields) {
     const string &artistFirstName = fields[1];
@@ -83,6 +86,7 @@ WrittenWord createWrittenWord(const vector<string> &fields) {
     const string &donatedLast = fields[11];
     const int numPages = stoi(fields[12]);
     const WrittenWord::Medium medium = parseWrittenWordMedium(fields[13]);
+    const string &description = fields[14];
 
     return WrittenWord(
         artistFirstName, artistLastName,
@@ -91,6 +95,6 @@ WrittenWord createWrittenWord(const vector<string> &fields) {
         acquiredMonth, acquiredDay, acquiredYear,
         donatedFirst, donatedLast,
         numPages,
-        medium
+        medium, description
     );
 }

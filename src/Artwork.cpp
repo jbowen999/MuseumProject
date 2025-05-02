@@ -6,7 +6,7 @@
 
 Artwork::Artwork() : artist("", ""),
                      title(), created(0, 0, 0),
-                     acquired(0, 0, 0), donatedBy("", "") {}
+                     acquired(0, 0, 0), donatedBy("", ""), description() {}
 
 Artwork::~Artwork() = default;
 
@@ -30,6 +30,10 @@ void Artwork::setDonatedBy(const std::string &f, const std::string &l) {
     donatedBy = Name(f, l);
 }
 
+void Artwork::setDescription(const std::string &d) {
+    description = d;
+}
+
 Name Artwork::getArtist() const {
     return artist;
 }
@@ -48,6 +52,10 @@ Date Artwork::getAcquiredDate() const {
 
 Name Artwork::getDonatedBy() const {
     return donatedBy;
+}
+
+std::string Artwork::getDescription() const {
+    return description;
 }
 
 bool Artwork::operator==(const Artwork &other) const {

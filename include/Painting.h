@@ -15,20 +15,19 @@ public:
 
 private:
     Dimensions dimensions = Dimensions(0, 0);
-    string asciiArtFilename;
+    Medium medium;
 
 public:
     static int numberOfPaintings;
-    Medium medium;
 
-    Painting(const string &artistFirst,
-             const string &artistLast,
-             const string &title, int createdMonth,
+    Painting(const string& artistFirst,
+             const string& artistLast,
+             const string& title, int createdMonth,
              int createdDay, int createdYear,
              int acquiredMonth, int acquiredDay,
-             int acquiredYear, const string &donatedFirst,
-             const string &donatedLast, double w,
-             double h, Medium medium);
+             int acquiredYear, const string& donatedFirst,
+             const string& donatedLast, double w,
+             double h, Medium medium, const string& description);
 
     string getMediumAsString() const;
     string toString() const override;
@@ -41,8 +40,8 @@ public:
 
 };
 
-Painting::Medium parsePaintingMedium(const string &str);
-Painting createPainting(const vector<string> &fields);
+Painting::Medium parsePaintingMedium(const string& str);
+Painting createPainting(const vector<string>& fields);
 
 
 #endif //PAINTING_H

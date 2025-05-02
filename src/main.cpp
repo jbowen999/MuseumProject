@@ -69,8 +69,8 @@ int main() {
     }
 
     cout << "Paintings total=" << Painting::numberOfPaintings << endl;
-    cout << "Paintings total=" << Sculpture::numberOfSculptures << endl;
-    cout << "Paintings total=" << WrittenWord::numberOfWrittenWordItems << endl;
+    cout << "Sculpture total=" << Sculpture::numberOfSculptures << endl;
+    cout << "Written word item total=" << WrittenWord::numberOfWrittenWordItems << endl;
 
     return 0;
 }
