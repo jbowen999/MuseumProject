@@ -1,13 +1,10 @@
-//
-// Created by Julian on 4/29/2025.
-//
-
 #include "../include/Painting.h"
 
 #include <sstream>
 
 int Painting::numberOfPaintings = 0; // Initialize the static variable
 
+// Constructor
 Painting::Painting(const string &artistFirst, const string &artistLast,
                    const string &title, const int createdMonth,
                    const int createdDay, const int createdYear,
@@ -26,6 +23,7 @@ Painting::Painting(const string &artistFirst, const string &artistLast,
     numberOfPaintings++;
 }
 
+// Getter and setter for Dimensions
 void Painting::setDimensions(const double h, const double w) {
     dimensions.setHeight(h);
     dimensions.setWidth(w);
@@ -35,6 +33,7 @@ Dimensions Painting::getDimensions() const {
     return dimensions;
 }
 
+// Member function to help with toString()
 string Painting::getMediumAsString() const {
     switch (medium) {
         case Medium::Oil: return "Oil";
@@ -45,6 +44,7 @@ string Painting::getMediumAsString() const {
     }
 }
 
+// Function to help with parsing the csv
 Painting::Medium parsePaintingMedium(const std::string &str) {
     if (str == "Oil") return Painting::Medium::Oil;
     if (str == "Acrylic") return Painting::Medium::Acrylic;
@@ -53,6 +53,7 @@ Painting::Medium parsePaintingMedium(const std::string &str) {
     throw std::invalid_argument("Unknown medium: " + str);
 }
 
+// Override functions
 string Painting::toString() const {
     return "Painting: \"" + getTitle() + "\"\n"
            "Artist: " + getArtist().toString() + "\n"
@@ -91,6 +92,7 @@ std::string Painting::toCSV() const {
     return oss.str();
 }
 
+// Function to create object after csv parsing
 Painting createPainting(const vector<string> &fields) {
     const string &artistFirstName = fields[1];
     const string &artistLastName = fields[2];

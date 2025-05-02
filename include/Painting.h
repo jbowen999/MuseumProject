@@ -1,7 +1,3 @@
-//
-// Created by Julian on 4/29/2025.
-//
-
 #ifndef PAINTING_H
 #define PAINTING_H
 #include "Artwork.h"
@@ -30,6 +26,7 @@ public:
              double h, Medium medium, const string& description);
 
     string getMediumAsString() const;
+
     string toString() const override;
     double value() const override;
     std::string toCSV() const override;

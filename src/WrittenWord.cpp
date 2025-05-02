@@ -1,7 +1,3 @@
-//
-// Created by Julian on 4/29/2025.
-//
-
 #include "../include/WrittenWord.h"
 
 #include <sstream>
@@ -27,7 +23,7 @@ WrittenWord::WrittenWord(const string &artistFirst, const string &artistLast,
     numberOfWrittenWordItems++;
 }
 
-
+// Helper function for toString()
 string WrittenWord::getMediumAsString() const {
     switch (medium) {
         case Medium::Novel: return "Novel";
@@ -40,7 +36,7 @@ string WrittenWord::getMediumAsString() const {
         default: return "Unknown";
     }
 }
-
+// Helper function for parsing CSV file
 WrittenWord::Medium parseWrittenWordMedium(const std::string &str) {
     if (str == "Novel") return WrittenWord::Medium::Novel;
     if (str == "Biography") return WrittenWord::Medium::Biography;
@@ -52,6 +48,7 @@ WrittenWord::Medium parseWrittenWordMedium(const std::string &str) {
     throw std::invalid_argument("Unknown medium: " + str);
 }
 
+// Override functions
 string WrittenWord::toString() const {
     return "WrittenWord: \"" + getTitle() + "\"\n"
            "Artist: " + getArtist().toString() + "\n"
@@ -87,6 +84,7 @@ std::string WrittenWord::toCSV() const {
     return oss.str();
 }
 
+// Function to create object after csv parsing
 WrittenWord createWrittenWord(const vector<string> &fields) {
     const string &artistFirstName = fields[1];
     const string &artistLastName = fields[2];

@@ -1,7 +1,3 @@
-//
-// Created by Julian on 4/29/2025.
-//
-
 #ifndef WRITTENWORD_H
 #define WRITTENWORD_H
 #include "Artwork.h"

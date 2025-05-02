@@ -1,7 +1,3 @@
-//
-// Created by Julian on 4/25/2025.
-//
-
 #ifndef DATE_H
 #define DATE_H
 #include <string>
@@ -15,11 +11,12 @@ class Date {
 
 public:
     Date(int m, int d, int y);
-    [[nodiscard]] std::string toString() const;
+
+    std::string toString() const;
 
     std::string toCSVString() const;
 
-    [[nodiscard]] int getYear() const;
+    int getYear() const;
 };
 
 

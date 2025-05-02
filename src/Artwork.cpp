@@ -1,15 +1,14 @@
-//
-// Created by Julian on 4/25/2025.
-//
-
 #include "../include/Artwork.h"
 
+// Default constructor initializes members using their default constructors
 Artwork::Artwork() : artist("", ""),
                      title(), created(0, 0, 0),
                      acquired(0, 0, 0), donatedBy("", ""), description() {}
 
+// Pure virtual destructor must have a definition even if defaulted
 Artwork::~Artwork() = default;
 
+// Settters
 void Artwork::setArtist(const std::string &f, const std::string &l) {
     artist = Name(f, l);
 }
@@ -34,6 +33,7 @@ void Artwork::setDescription(const std::string &d) {
     description = d;
 }
 
+// Getters
 Name Artwork::getArtist() const {
     return artist;
 }
@@ -58,6 +58,7 @@ std::string Artwork::getDescription() const {
     return description;
 }
 
+// Overload operators
 bool Artwork::operator==(const Artwork &other) const {
     return value() == other.value();
 }

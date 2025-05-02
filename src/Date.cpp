@@ -1,7 +1,3 @@
-//
-// Created by Julian on 4/25/2025.
-//
-
 #include "../include/Date.h"
 #include <string>
 Date::Date(const int m, const int d, const int y)

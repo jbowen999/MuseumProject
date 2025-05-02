@@ -1,7 +1,3 @@
-//
-// Created by Julian on 4/25/2025.
-//
-
 #include "../include/Dimensions.h"
 
 Dimensions::Dimensions(const double w, const double h)

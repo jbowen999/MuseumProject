@@ -1,7 +1,3 @@
-//
-// Created by Julian on 4/29/2025.
-//
-
 #include "../include/Sculpture.h"
 
 #include <sstream>
@@ -28,6 +24,7 @@ Sculpture::Sculpture(const string &artistFirst, const string &artistLast,
     numberOfSculptures++;
 }
 
+// Getter and setter for dimensions
 void Sculpture::setDimensions(const double h, const double w) {
     dimensions.setHeight(h);
     dimensions.setWidth(w);
@@ -37,6 +34,7 @@ Dimensions Sculpture::getDimensions() const {
     return dimensions;
 }
 
+// Helper function for toString()
 string Sculpture::getMediumAsString() const {
     switch (medium) {
         case Medium::Ceramic: return "Ceramic";
@@ -47,6 +45,7 @@ string Sculpture::getMediumAsString() const {
     }
 }
 
+// Helper function for parsing CSV file
 Sculpture::Medium parseSculptureMedium(const std::string &str) {
     if (str == "Ceramic") return Sculpture::Medium::Ceramic;
     if (str == "Stone") return Sculpture::Medium::Stone;
@@ -55,6 +54,7 @@ Sculpture::Medium parseSculptureMedium(const std::string &str) {
     throw std::invalid_argument("Unknown medium: " + str);
 }
 
+// Override functions
 string Sculpture::toString() const {
     return "Sculpture: \"" + getTitle() + "\"\n"
            "Artist: " + getArtist().toString() + "\n"
@@ -91,7 +91,7 @@ std::string Sculpture::toCSV() const {
     return oss.str();
 }
 
-
+// Function to create object after csv parsing
 Sculpture createSculpture(const vector<string> &fields) {
     const string &artistFirstName = fields[1];
     const string &artistLastName = fields[2];

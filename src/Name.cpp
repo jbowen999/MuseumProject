@@ -1,7 +1,3 @@
-//
-// Created by Julian on 4/25/2025.
-//
-
 #include "../include/Name.h"
 #include <utility>
 

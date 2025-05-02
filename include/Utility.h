@@ -1,14 +1,8 @@
-//
-// Created by Julian on 5/2/2025.
-//
-
 #ifndef UTILITY_H
 #define UTILITY_H
 #include <iostream>
-#include <vector>
 #include <cctype>
 #include <algorithm>
-#include <stdexcept>
 #include "../include/Painting.h"
 #include "../include/Sculpture.h"
 #include "../include/WrittenWord.h"
@@ -28,7 +22,7 @@ inline std::vector<std::string> split(const std::string &line, const char delimi
     return result;
 }
 
-// loads data from file
+// loads data from file and returns shared_ptr vector
 inline std::vector<shared_ptr<Artwork>> loadData(const string &filename) {
     vector<shared_ptr<Artwork> > artworks; // initialize vector to be returned
     ifstream file(filename);
@@ -59,6 +53,7 @@ inline std::vector<shared_ptr<Artwork>> loadData(const string &filename) {
     return artworks;
 }
 
+// if no csv to read, this function gives the program a small number of sample artworks to work with
 inline vector<shared_ptr<Artwork>> generateSampleArtworks() {
     vector<shared_ptr<Artwork>> sampleArtworks;
 
@@ -123,6 +118,7 @@ inline vector<shared_ptr<Artwork>> generateSampleArtworks() {
     return sampleArtworks;
 }
 
+// Separates main collection into new vectors by type of artwork
 inline void partitionArtworks(const std::vector<std::shared_ptr<Artwork>>& artworks,
                               std::vector<std::shared_ptr<Painting>>& paintings,
                               std::vector<std::shared_ptr<Sculpture>>& sculptures,
@@ -140,6 +136,7 @@ inline void partitionArtworks(const std::vector<std::shared_ptr<Artwork>>& artwo
     }
 }
 
+// helper function to streamline user input
 inline std::string toLower(const std::string& str) {
     std::string result = str;
     ranges::transform(result, result.begin(),
@@ -147,6 +144,7 @@ inline std::string toLower(const std::string& str) {
     return result;
 }
 
+// takes the main and user collections, adds to user collection based on user input
 inline void addToUserCollection(
     const std::vector<std::shared_ptr<Artwork>>& mainCollection,
     std::vector<std::shared_ptr<Artwork>>& userCollection) {
@@ -183,6 +181,7 @@ inline void addToUserCollection(
     }
 }
 
+// Writes to CSV file, used to save user collection for next time program is run
 template<typename T>
 void writeCollectionToCSV(const std::vector<shared_ptr<T>>& items, const std::string& filename) {
     std::ofstream outFile(filename);
@@ -198,6 +197,7 @@ void writeCollectionToCSV(const std::vector<shared_ptr<T>>& items, const std::st
 
 }
 
+// calculates which artwork has the max value
 template<typename T>
 T* findMaxValue(const std::vector<shared_ptr<Artwork>>& items) {
     if (items.empty()) return nullptr;
@@ -211,6 +211,7 @@ T* findMaxValue(const std::vector<shared_ptr<Artwork>>& items) {
     return maxItem;
 }
 
+// calculates which artwork has the minimum value
 template<typename T>
 T* findMinValue(const std::vector<shared_ptr<Artwork>>& items) {
     if (items.empty()) return nullptr;
@@ -224,6 +225,7 @@ T* findMinValue(const std::vector<shared_ptr<Artwork>>& items) {
     return minItem;
 }
 
+// prints just the titles of a collection
 template<typename T>
 void printCollectionTitles(const std::vector<shared_ptr<T>>& items) {
     if (items.empty()) {
@@ -235,6 +237,7 @@ void printCollectionTitles(const std::vector<shared_ptr<T>>& items) {
     }
 }
 
+// prints entire toString() of a collection
 template<typename T>
 void printCollectionStrings(const std::vector<shared_ptr<T>>& items) {
     if (items.empty()) {
@@ -246,6 +249,7 @@ void printCollectionStrings(const std::vector<shared_ptr<T>>& items) {
     }
 }
 
+// checks user input
 template<typename T>
 bool getInput(T &input) {
     cin >> input;
@@ -256,9 +260,4 @@ bool getInput(T &input) {
     }
     return true;
 }
-
-
-
-
-
 #endif //UTILITY_H
