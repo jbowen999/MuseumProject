@@ -4,6 +4,8 @@
 
 #include "../include/Painting.h"
 
+#include <sstream>
+
 int Painting::numberOfPaintings = 0; // Initialize the static variable
 
 Painting::Painting(const string &artistFirst, const string &artistLast,
@@ -73,6 +75,20 @@ double Painting::value() const {
     const double areaInSquareFeet = areaInSquareInches / 144.0;
 
     return age * areaInSquareFeet;
+}
+
+std::string Painting::toCSV() const {
+    std::ostringstream oss;
+    oss << "Painting,"
+        << getTitle() << ","
+        << getArtist().toCSVString() << ","
+        << getCreatedDate().toCSVString() << ","
+        << getAcquiredDate().toCSVString() << ","
+        << getDonatedBy().toCSVString() << ","
+        << getDimensions().toCSVString() << ","
+        << getMediumAsString() << ","
+        << getDescription() << ",";
+    return oss.str();
 }
 
 Painting createPainting(const vector<string> &fields) {

@@ -11,6 +11,10 @@ std::string Date::toString() const {
     return std::to_string(month) + "/" + std::to_string(day) + "/" + std::to_string(year);
 }
 
+std::string Date::toCSVString() const {
+    return std::to_string(month) + "," + std::to_string(day) + "," + std::to_string(year);
+}
+
 int Date::getYear() const {
     return year;
 }

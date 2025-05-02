@@ -32,6 +32,7 @@ public:
     string getMediumAsString() const;
     string toString() const override;
     double value() const override;
+    std::string toCSV() const override;
 
     void setDimensions(double h, double w);
     Dimensions getDimensions() const;

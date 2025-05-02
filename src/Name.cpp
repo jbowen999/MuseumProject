@@ -11,3 +11,8 @@ Name::Name(std::string f, std::string l)
 std::string Name::toString() const {
     return firstName + " " + lastName;
 }
+
+std::string Name::toCSVString() const {
+    return firstName + "," + lastName;
+
+}

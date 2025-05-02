@@ -5,15 +5,15 @@
 
 using namespace std;
 
-
 int main() {
-    const string filename = "../data/artworks.csv";
+    const string mainCollectionFile = "../data/artworks.csv";
+    const string userCollectionFile = "../data/userCollection.csv";
 
     cout << "Welcome to the Museum Management System (MMS)! \nAttempting to Load artworks from artworks.csv" << endl;
 
-    const vector<unique_ptr<Artwork> > artworks = loadData(filename);
+    const vector<shared_ptr<Artwork> > main_collection = loadData(mainCollectionFile);
 
-    if (artworks.empty()) {
+    if (main_collection.empty()) {
         cout << "Error loading file or no artworks found. Loading pre-set artworks" << endl;
         generateSampleArtworks();
     } else {
@@ -21,11 +21,12 @@ int main() {
     }
 
 
-    constexpr vector<unique_ptr<Artwork> > user_collection;
-    vector<unique_ptr<Painting> > paintings;
-    vector<unique_ptr<Sculpture> > sculptures;
-    vector<unique_ptr<WrittenWord> > writtenWords;
-    partitionArtworks(artworks, paintings, sculptures, writtenWords);
+    vector<shared_ptr<Artwork> > userCollection = loadData(userCollectionFile);
+    vector<shared_ptr<Painting> > paintings;
+    vector<shared_ptr<Sculpture> > sculptures;
+    vector<shared_ptr<WrittenWord> > writtenWords;
+    partitionArtworks(main_collection, paintings, sculptures, writtenWords);
+
 
     const int totalItems = Painting::numberOfPaintings + Sculpture::numberOfSculptures +
                            WrittenWord::numberOfWrittenWordItems;
@@ -41,12 +42,13 @@ int main() {
                 << "1. Select Exhibit\n"
                 << "2. View Artwork list\n"
                 << "3. Create a collection\n"
-                << "4. Most valuable artwork\n"
-                << "5. Least valuable artwork\n"
-                << "6. Exit\n";
-        cout << "Please enter your choice (1-4): ";
+                << "4. View your collection\n"
+                << "5. Most valuable artwork\n"
+                << "6. Least valuable artwork\n"
+                << "7. Exit\n";
+        cout << "Please enter your choice (1-7): ";
 
-        if (!getInput(input) || input < 1 || input > 6) {
+        if (!getInput(input) || input < 1 || input > 7) {
             cout << "Invalid selection. Please try again.\n";
             continue;
         }
@@ -58,6 +60,7 @@ int main() {
                         << "2. Sculptures\n"
                         << "3. Written Word\n"
                         << "4. Return to Main Menu\n";
+                cout << "Please enter your choice (1-4): ";
                 if (!getInput(exhibitChoice) || exhibitChoice < 1 || exhibitChoice > 4) {
                     cout << "Invalid selection. Please try again.\n";
                     continue;
@@ -86,16 +89,19 @@ int main() {
 
             case 2:
                 cout << "Viewing the full artwork list...\n";
-                printCollectionTitles(artworks);
+                printCollectionTitles(main_collection);
                 break;
 
             case 3:
-                cout << "Create a new collection functionality here...\n";
-            // Add your collection creation logic here
+                addToUserCollection(main_collection, userCollection);
                 break;
 
-            case 4: {
-                if (const Artwork *maxValueItem = findMaxValue<Artwork>(artworks)) {
+            case 4:
+                printCollectionStrings(userCollection);
+                break;
+
+            case 5: {
+                if (const Artwork *maxValueItem = findMaxValue<Artwork>(main_collection)) {
                     cout << "Most valuable artwork:\n" << maxValueItem->toString() << "\n\n";
                 } else {
                     cout << "No artworks available.\n";
@@ -103,8 +109,8 @@ int main() {
                 break;
             }
 
-            case 5: {
-                if (const Artwork *minValueItem = findMinValue<Artwork>(artworks)) {
+            case 6: {
+                if (const Artwork *minValueItem = findMinValue<Artwork>(main_collection)) {
                     cout << "Least valuable artwork:\n" << minValueItem->toString() << "\n\n";
                 } else {
                     cout << "No artworks available.\n\n";
@@ -112,8 +118,9 @@ int main() {
                 break;
             }
 
-            case 6:
+            case 7:
                 cout << "Exiting program.\n";
+                writeCollectionToCSV(userCollection, userCollectionFile);
                 return 0;
 
             default:

@@ -14,6 +14,9 @@ public:
     Dimensions(double w, double h);
 
     [[nodiscard]] std::string toString() const;
+
+    std::string toCSVString() const;
+
     void setWidth(double w);
     void setHeight(double h);
     [[nodiscard]] double getWidth() const;

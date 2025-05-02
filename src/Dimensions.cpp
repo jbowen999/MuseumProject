@@ -11,6 +11,11 @@ std::string Dimensions::toString() const {
     return std::format("{:.2f} x {:.2f} in", width, height);
 }
 
+std::string Dimensions::toCSVString() const {
+    return std::format("{:.2f},{:.2f}", width, height);
+}
+
+
 void Dimensions::setWidth(const double w) {
     width = w;
 }

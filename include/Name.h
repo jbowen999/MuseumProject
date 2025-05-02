@@ -14,6 +14,8 @@ class Name {
 public:
     Name(std::string f, std::string l);
     [[nodiscard]] std::string toString() const;
+
+    std::string toCSVString() const;
 };
 
 

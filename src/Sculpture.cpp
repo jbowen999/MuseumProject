@@ -4,6 +4,8 @@
 
 #include "../include/Sculpture.h"
 
+#include <sstream>
+
 
 int Sculpture::numberOfSculptures = 0; // Initialize the static variable
 
@@ -72,6 +74,21 @@ double Sculpture::value() const {
     const int age = currentYear - getCreatedDate().getYear();
 
     return age * weight;
+}
+
+std::string Sculpture::toCSV() const {
+    std::ostringstream oss;
+    oss << "Sculpture,"
+        << getTitle() << ","
+        << getArtist().toCSVString() << ","
+        << getCreatedDate().toCSVString() << ","
+        << getAcquiredDate().toCSVString() << ","
+        << getDonatedBy().toCSVString() << ","
+        << getDimensions().toCSVString() << ","
+        << format("{:.2f}", weight)<< ","
+        << getMediumAsString() << ","
+        << getDescription() << ",";
+    return oss.str();
 }
 
 

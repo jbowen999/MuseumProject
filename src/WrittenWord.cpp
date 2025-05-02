@@ -4,6 +4,8 @@
 
 #include "../include/WrittenWord.h"
 
+#include <sstream>
+
 
 int WrittenWord::numberOfWrittenWordItems = 0; // Initialize the static variable
 
@@ -71,6 +73,19 @@ double WrittenWord::value() const {
     return age * (static_cast<double>(numPages) / 100);
 }
 
+std::string WrittenWord::toCSV() const {
+    std::ostringstream oss;
+    oss << "WrittenWord,"
+        << getTitle() << ","
+        << getArtist().toCSVString() << ","
+        << getCreatedDate().toCSVString() << ","
+        << getAcquiredDate().toCSVString() << ","
+        << getDonatedBy().toCSVString() << ","
+        << to_string(numPages) << ","
+        << getMediumAsString() << ","
+        << getDescription() << ",";
+    return oss.str();
+}
 
 WrittenWord createWrittenWord(const vector<string> &fields) {
     const string &artistFirstName = fields[1];

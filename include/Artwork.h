@@ -21,9 +21,9 @@ class Artwork {
 public:
     Artwork();
     virtual ~Artwork() = 0;
-
     std::string virtual toString() const = 0;
     double virtual value() const = 0;
+    virtual std::string toCSV() const = 0;
 
     void setArtist(const std::string &f, const std::string &l);
     void setTitle(const std::string &t);

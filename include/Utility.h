@@ -6,6 +6,7 @@
 #define UTILITY_H
 #include <iostream>
 #include <vector>
+#include <cctype>
 #include <algorithm>
 #include <stdexcept>
 #include "../include/Painting.h"
@@ -28,8 +29,8 @@ inline std::vector<std::string> split(const std::string &line, const char delimi
 }
 
 // loads data from file
-inline std::vector<unique_ptr<Artwork>> loadData(const string &filename) {
-    vector<unique_ptr<Artwork> > artworks; // initialize vector to be returned
+inline std::vector<shared_ptr<Artwork>> loadData(const string &filename) {
+    vector<shared_ptr<Artwork> > artworks; // initialize vector to be returned
     ifstream file(filename);
     if (!file) {
         cerr << "Failed to open " << filename << endl;
@@ -44,11 +45,11 @@ inline std::vector<unique_ptr<Artwork>> loadData(const string &filename) {
 
         // Branch to decide what kind of artwork is being read
         if (fields[0] == "Painting") {
-            artworks.push_back(make_unique<Painting>(createPainting(fields)));
+            artworks.push_back(make_shared<Painting>(createPainting(fields)));
         } else if (fields[0] == "Sculpture") {
-            artworks.push_back(make_unique<Sculpture>(createSculpture(fields)));
+            artworks.push_back(make_shared<Sculpture>(createSculpture(fields)));
         } else if (fields[0] == "WrittenWord") {
-            artworks.push_back(make_unique<WrittenWord>(createWrittenWord(fields)));
+            artworks.push_back(make_shared<WrittenWord>(createWrittenWord(fields)));
         }
         else {
             cerr << "Unknown artwork type: " << fields[0] << endl;
@@ -58,8 +59,8 @@ inline std::vector<unique_ptr<Artwork>> loadData(const string &filename) {
     return artworks;
 }
 
-inline vector<unique_ptr<Artwork>> generateSampleArtworks() {
-    vector<unique_ptr<Artwork>> sampleArtworks;
+inline vector<shared_ptr<Artwork>> generateSampleArtworks() {
+    vector<shared_ptr<Artwork>> sampleArtworks;
 
     // Two Paintings
     sampleArtworks.push_back(make_unique<Painting>(
@@ -122,36 +123,10 @@ inline vector<unique_ptr<Artwork>> generateSampleArtworks() {
     return sampleArtworks;
 }
 
-template<typename T>
-T* findMaxValue(const std::vector<unique_ptr<Artwork>>& items) {
-    if (items.empty()) return nullptr;
-    T* maxItem = items[0].get();
-
-    for (const auto& item : items) {
-        if (item->value() > maxItem->value()) {
-            maxItem = item.get();
-        }
-    }
-    return maxItem;
-}
-
-template<typename T>
-T* findMinValue(const std::vector<unique_ptr<Artwork>>& items) {
-    if (items.empty()) return nullptr;
-    T* minItem = items[0].get();
-
-    for (const auto& item : items) {
-        if (item->value() < minItem->value()) {
-            minItem = item.get();
-        }
-    }
-    return minItem;
-}
-
-void partitionArtworks(const std::vector<std::unique_ptr<Artwork>>& artworks,
-                       std::vector<std::unique_ptr<Painting>>& paintings,
-                       std::vector<std::unique_ptr<Sculpture>>& sculptures,
-                       std::vector<std::unique_ptr<WrittenWord>>& writtenWords) {
+inline void partitionArtworks(const std::vector<std::shared_ptr<Artwork>>& artworks,
+                              std::vector<std::shared_ptr<Painting>>& paintings,
+                              std::vector<std::shared_ptr<Sculpture>>& sculptures,
+                              std::vector<std::shared_ptr<WrittenWord>>& writtenWords) {
     for (const auto& artwork : artworks) {
         if (auto const painting = dynamic_cast<Painting*>(artwork.get())) {
             // 'artwork' is a pointer to an Artwork object,
@@ -165,8 +140,92 @@ void partitionArtworks(const std::vector<std::unique_ptr<Artwork>>& artworks,
     }
 }
 
+inline std::string toLower(const std::string& str) {
+    std::string result = str;
+    ranges::transform(result, result.begin(),
+                      [](const unsigned char c) { return std::tolower(c); });
+    return result;
+}
+
+inline void addToUserCollection(
+    const std::vector<std::shared_ptr<Artwork>>& mainCollection,
+    std::vector<std::shared_ptr<Artwork>>& userCollection) {
+
+    std::string title;
+    std::cout << "Enter the title of the artwork you want to add: ";
+    std::cin.ignore();
+    std::getline(std::cin, title);
+
+    bool found = false;
+    std::string loweredInput = toLower(title);
+
+    for (const auto& artwork : mainCollection) {
+        if (toLower(artwork->getTitle()) == loweredInput) {
+            std::cout << "Is this what you wanted?\n";
+            std::cout << artwork->toString() << "\n(Y/N): ";
+            char confirm;
+            std::cin >> confirm;
+
+            if (confirm == 'Y' || confirm == 'y') {
+                userCollection.push_back(artwork);
+                std::cout << "Artwork added to your collection.\n";
+            } else {
+                std::cout << "Artwork not added.\n";
+            }
+
+            found = true;
+            break;
+        }
+    }
+
+    if (!found) {
+        std::cout << "No artwork with that title was found.\n";
+    }
+}
+
 template<typename T>
-void printCollectionTitles(const std::vector<unique_ptr<T>>& items) {
+void writeCollectionToCSV(const std::vector<shared_ptr<T>>& items, const std::string& filename) {
+    std::ofstream outFile(filename);
+    if (!outFile.is_open()) {
+        std::cerr << "Error: Could not open file " << filename << " for writing.\n";
+        return;
+    }
+    for (const auto& item : items) {
+        outFile << item->toCSV() << "\n";
+    }
+    outFile.close();
+    std::cout << "Collection saved to " << filename << "\n";
+
+}
+
+template<typename T>
+T* findMaxValue(const std::vector<shared_ptr<Artwork>>& items) {
+    if (items.empty()) return nullptr;
+    T* maxItem = items[0].get();
+
+    for (const auto& item : items) {
+        if (item->value() > maxItem->value()) {
+            maxItem = item.get();
+        }
+    }
+    return maxItem;
+}
+
+template<typename T>
+T* findMinValue(const std::vector<shared_ptr<Artwork>>& items) {
+    if (items.empty()) return nullptr;
+    T* minItem = items[0].get();
+
+    for (const auto& item : items) {
+        if (item->value() < minItem->value()) {
+            minItem = item.get();
+        }
+    }
+    return minItem;
+}
+
+template<typename T>
+void printCollectionTitles(const std::vector<shared_ptr<T>>& items) {
     if (items.empty()) {
         cout << "No items in this collection.\n";
         return;
@@ -177,7 +236,7 @@ void printCollectionTitles(const std::vector<unique_ptr<T>>& items) {
 }
 
 template<typename T>
-void printCollectionStrings(const std::vector<unique_ptr<T>>& items) {
+void printCollectionStrings(const std::vector<shared_ptr<T>>& items) {
     if (items.empty()) {
         cout << "No items in this collection.\n";
         return;
@@ -186,7 +245,6 @@ void printCollectionStrings(const std::vector<unique_ptr<T>>& items) {
         cout << item->toString() << "\n\n";
     }
 }
-
 
 template<typename T>
 bool getInput(T &input) {
@@ -198,6 +256,8 @@ bool getInput(T &input) {
     }
     return true;
 }
+
+
 
 
 

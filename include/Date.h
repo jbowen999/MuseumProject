@@ -16,6 +16,9 @@ class Date {
 public:
     Date(int m, int d, int y);
     [[nodiscard]] std::string toString() const;
+
+    std::string toCSVString() const;
+
     [[nodiscard]] int getYear() const;
 };
 
