@@ -148,4 +148,22 @@ T* findMinValue(const std::vector<unique_ptr<Artwork>>& items) {
     return minItem;
 }
 
+void partitionArtworks(const std::vector<std::unique_ptr<Artwork>>& artworks,
+                       std::vector<std::unique_ptr<Painting>>& paintings,
+                       std::vector<std::unique_ptr<Sculpture>>& sculptures,
+                       std::vector<std::unique_ptr<WrittenWord>>& writtenWords) {
+    for (const auto& artwork : artworks) {
+        if (auto const painting = dynamic_cast<Painting*>(artwork.get())) {
+            // 'artwork' is a pointer to an Artwork object,
+            // and we're trying to cast it to a Painting pointer.
+            paintings.push_back(std::make_unique<Painting>(*painting));  // Copy the Painting object
+        } else if (auto const sculpture = dynamic_cast<Sculpture*>(artwork.get())) {
+            sculptures.push_back(std::make_unique<Sculpture>(*sculpture));  // Copy the Sculpture object
+        } else if (auto const writtenWord = dynamic_cast<WrittenWord*>(artwork.get())) {
+            writtenWords.push_back(std::make_unique<WrittenWord>(*writtenWord));  // Copy the WrittenWord object
+        }
+    }
+}
+
+
 #endif //UTILITY_H
