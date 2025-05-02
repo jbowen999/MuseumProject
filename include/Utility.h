@@ -165,5 +165,40 @@ void partitionArtworks(const std::vector<std::unique_ptr<Artwork>>& artworks,
     }
 }
 
+template<typename T>
+void printCollectionTitles(const std::vector<unique_ptr<T>>& items) {
+    if (items.empty()) {
+        cout << "No items in this collection.\n";
+        return;
+    }
+    for (const auto& item : items) {
+        cout << item->getTitle() << "\n\n";
+    }
+}
+
+template<typename T>
+void printCollectionStrings(const std::vector<unique_ptr<T>>& items) {
+    if (items.empty()) {
+        cout << "No items in this collection.\n";
+        return;
+    }
+    for (const auto& item : items) {
+        cout << item->toString() << "\n\n";
+    }
+}
+
+
+template<typename T>
+bool getInput(T &input) {
+    cin >> input;
+    if (cin.fail()) {
+        cin.clear(); // Clears the error flag
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignores invalid input
+        return false;
+    }
+    return true;
+}
+
+
 
 #endif //UTILITY_H

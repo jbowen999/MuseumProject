@@ -1278,6 +1278,7 @@ CMakeFiles/Museum.dir/src/main.cpp.obj: C:/Users/Julian/CLionProjects/Museum/src
   C:/Users/Julian/CLionProjects/Museum/include/Artwork.h \
   C:/Users/Julian/CLionProjects/Museum/include/Date.h \
   C:/Users/Julian/CLionProjects/Museum/include/Dimensions.h \
+  C:/Users/Julian/CLionProjects/Museum/include/Menus.h \
   C:/Users/Julian/CLionProjects/Museum/include/Name.h \
   C:/Users/Julian/CLionProjects/Museum/include/Painting.h \
   C:/Users/Julian/CLionProjects/Museum/include/Sculpture.h \
@@ -1730,3 +1731,5 @@ C:/Program\ Files/JetBrains/CLion\ 2024.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32
 C:/Program\ Files/JetBrains/CLion\ 2024.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++io.h:
 
 C:/Program\ Files/JetBrains/CLion\ 2024.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdint.h:
+
+C:/Users/Julian/CLionProjects/Museum/include/Menus.h:
