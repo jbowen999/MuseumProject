@@ -8,7 +8,8 @@ using namespace std;
 int main() {
     const string mainCollectionFile = "../data/artworks.csv";
     const string userCollectionFile = "../data/userCollection.csv";
-
+// museumEnterance();
+    museumLogo();
     cout << "Welcome to the Museum Management System (MMS)! \nAttempting to Load artworks from artworks.csv" << endl;
 
     // Load the main collection of artworks from a CSV file

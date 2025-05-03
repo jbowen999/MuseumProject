@@ -159,16 +159,16 @@ inline void addToUserCollection(
 
     for (const auto& artwork : mainCollection) {
         if (toLower(artwork->getTitle()) == loweredInput) {
-            std::cout << "Is this what you wanted?\n";
+            std::cout << "Add this artwork to your collection?\n\n";
             std::cout << artwork->toString() << "\n(Y/N): ";
             char confirm;
             std::cin >> confirm;
 
             if (confirm == 'Y' || confirm == 'y') {
                 userCollection.push_back(artwork);
-                std::cout << "Artwork added to your collection.\n";
+                std::cout << "Artwork added to your collection.\n\n";
             } else {
-                std::cout << "Artwork not added.\n";
+                std::cout << "Artwork not added.\n\n";
             }
 
             found = true;
@@ -177,7 +177,7 @@ inline void addToUserCollection(
     }
 
     if (!found) {
-        std::cout << "No artwork with that title was found.\n";
+        std::cout << "No artwork with that title was found.\n\n";
     }
 }
 
@@ -260,4 +260,19 @@ bool getInput(T &input) {
     }
     return true;
 }
+
+inline void museumLogo() {
+    cout << "     ___           ___           ___     \n"
+            "    /  /\\         /  /\\         /  /\\    \n"
+            "   /  /::|       /  /::|       /  /::\\   \n"
+            "  /  /:|:|      /  /:|:|      /__/:/\\:\\  \n"
+            " /  /:/|:|__   /  /:/|:|__   _\\_ \\:\\ \\:\\ \n"
+            "/__/:/_|::::\\ /__/:/_|::::\\ /__/\\ \\:\\ \\:\\\n"
+            "\\__\\/  /~~/:/ \\__\\/  /~~/:/ \\  \\:\\ \\:\\_\\/\n"
+            "      /  /:/        /  /:/   \\  \\:\\_\\:\\  \n"
+            "     /  /:/        /  /:/     \\  \\:\\/:/  \n"
+            "    /__/:/        /__/:/       \\  \\::/   \n"
+            "    \\__\\/         \\__\\/         \\__\\/    \n";
+}
+
 #endif //UTILITY_H
