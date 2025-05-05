@@ -1,4 +1,4 @@
-# Museum Project - CSC-237-04
+# Museum Project - CSC-237-04 - Julian Bowen
 Welcome to the museum! This page is your guide to how this program runs and where to find examples of OOP concepts within the code.
 
 First off, a complete UML diagram is found in the /data directory. 
