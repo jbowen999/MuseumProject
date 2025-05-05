@@ -41,17 +41,17 @@ The Museum Management System (MMS) is a simple C++ console app that lets users e
 
 ### Features
 
-Users can browse different exhibit types, view all artwork titles, build a personal collection, and check which pieces are the most or least valuable. The program checks for valid input and gives feedback to keep things running smoothly. When the user exits, their collection is saved so it can be loaded again next time. The code is organized into small, reusable pieces to make it easy to follow and expand on later.
+Users can browse different exhibit types, view all artwork titles, build a personal collection, and check which pieces are the most or least valuable. The program checks for valid input and gives feedback to keep things running smoothly. When the user exits, their collection is saved so it can be loaded again next time. 
 
 ### OOP concepts
 #### Encapsulation
-Each artwork type (Painting, Sculpture, WrittenWord) is a class that encapsulates its properties (like title, date, dimensions, etc.) and behavior (like toString() and getValue() methods).
+Each artwork type (Painting, Sculpture, WrittenWord) is a class that encapsulates its properties (like title, date, dimensions, etc.) and behavior (like toString() and value() methods).
 
 #### Abstraction
-The Artwork class is an abstract base class that defines the interface (getValue, toString) for all artwork types, without specifying how those functions work.
+The Artwork class is an abstract base class that defines the interface (value(), toString()) for all artwork types, without specifying how those functions work.
 
 #### Inheritance
 Painting, Sculpture, and WrittenWord all inherit from the Artwork base class.
 
 #### Polymorphism
-All artworks are stored as shared_ptr<Artwork> and call virtual functions like toString() or getValue(), which are resolved at runtime.
+All artworks are stored as shared_ptr<Artwork> and call virtual functions like toString() or value(), which are resolved at runtime.
