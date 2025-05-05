@@ -13,7 +13,7 @@ To view the UML diagram:
 
 This project is structured as follows.
 
-- \Museum
+- /Museum
 	- /data
 		- artworks.csv
 		- userCollection.csv
