@@ -41,7 +41,7 @@ The Museum Management System (MMS) is a simple C++ console app that lets users e
 
 ### Features
 
-Users can browse different exhibit types, view all artwork titles, build a personal collection, and check which pieces are the most or least valuable. The program checks for valid input and gives feedback to keep things running smoothly. When the user exits, their collection is saved so it can be loaded again next time. 
+Users can browse different exhibit types, view all artwork titles, build a personal collection, and check which pieces are the most or least valuable. The program checks for valid input and gives feedback to keep things running smoothly. When the user exits, their collection is saved so it can be loaded again next time. When you first download and run the program, the userCollection.csv will be empty. There is currently no way to remove a artwork from the user collection other than manually going into the userCollection.csv file and deleting the line. If this is done the next time the program is run the artwork will no longer be in userCollection vector. 
 
 ### OOP concepts
 #### Encapsulation
